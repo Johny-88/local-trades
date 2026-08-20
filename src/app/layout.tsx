@@ -1,11 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
-import "./architecture.css";
+import type { ReactNode } from "react";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
-import { SITE_NAME, SITE_URL } from "../lib/site";
+import { SITE_LANGUAGE, SITE_NAME, SITE_URL, THEME_COLOR } from "../lib/site";
+import "./globals.css";
+import "./architecture.css";
 
-export const metadata: Metadata = {metadataBase:new URL(SITE_URL),applicationName:SITE_NAME,icons:{icon:"/assets/favicon.svg"}};
-export const viewport: Viewport = {width:"device-width",initialScale:1,themeColor:"#faf6f0"};
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  icons: {
+    icon: [{ url: "/assets/favicon.svg", type: "image/svg+xml" }],
+  },
+};
 
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en-GB"><body><SiteHeader/>{children}<SiteFooter/></body></html>}
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: THEME_COLOR,
+};
+
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  return (
+    <html lang={SITE_LANGUAGE}>
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
+    </html>
+  );
+}

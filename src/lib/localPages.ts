@@ -30,6 +30,8 @@ export const LOCAL_LOCATIONS = {
   "west-bromwich": { name: "West Bromwich", region: "West Midlands", postcodeExample: "B70 8DY" },
 } as const;
 
+export type LocalCityKey = keyof typeof LOCAL_LOCATIONS;
+
 export const LOCAL_TRADES = {
   handyman: { singular: "Handyman", footerLabel: "Handymen", navJobsLabel: "Handyman jobs", jobsAnchor: "handyman-jobs", ctaLabel: "Find a handyman", findAnchor: "find-handyman" },
   plumber: { singular: "Plumber", footerLabel: "Plumbers", navJobsLabel: "Plumber jobs", jobsAnchor: "plumber-jobs", ctaLabel: "Find a plumber", findAnchor: "find-plumber" },
@@ -41,7 +43,6 @@ export const LOCAL_TRADES = {
   gardener: { singular: "Gardener", footerLabel: "Gardeners", navJobsLabel: "Gardening jobs", jobsAnchor: "gardening-jobs", ctaLabel: "Find a gardener", findAnchor: "find-gardener" },
 } as const;
 
-export type LocalCityKey = keyof typeof LOCAL_LOCATIONS;
 export type LocalTradeKey = keyof typeof LOCAL_TRADES;
 
 export type LocalPage = {
@@ -56,13 +57,22 @@ export type LocalPage = {
 const ALL_TRADES = Object.keys(LOCAL_TRADES) as LocalTradeKey[];
 const ALL_CITIES = Object.keys(LOCAL_LOCATIONS) as LocalCityKey[];
 
-export const PUBLISHED_LOCAL_PAGES = ALL_TRADES.flatMap((trade) =>
-  ALL_CITIES.map((city) => ({ trade, city })),
-);
+export const PLANNED_LOCAL_PAGES: ReadonlyArray<{
+  trade: LocalTradeKey;
+  city: LocalCityKey;
+}> = ALL_TRADES.flatMap((trade) => ALL_CITIES.map((city) => ({ trade, city })));
 
-export const localPages: LocalPage[] = PUBLISHED_LOCAL_PAGES.map(({ trade, city }) => {
+// Keep this list limited to routes that physically exist and are ready to be indexed.
+// Add each Local Trades city page here only when its page file and unique content are published.
+export const PUBLISHED_LOCAL_PAGES: ReadonlyArray<{
+  trade: LocalTradeKey;
+  city: LocalCityKey;
+}> = [];
+
+export const localPages: LocalPage[] = PLANNED_LOCAL_PAGES.map(({ trade, city }) => {
   const tradeInfo = LOCAL_TRADES[trade];
   const location = LOCAL_LOCATIONS[city];
+
   return {
     tradeSlug: trade,
     locationSlug: city,
@@ -81,7 +91,9 @@ export function localPagePath(first: LocalPage | LocalTradeKey, second?: LocalCi
 }
 
 export function getLocalPage(tradeSlug: string, locationSlug: string) {
-  return localPages.find((page) => page.tradeSlug === tradeSlug && page.locationSlug === locationSlug);
+  return localPages.find(
+    (page) => page.tradeSlug === tradeSlug && page.locationSlug === locationSlug,
+  );
 }
 
 export function isPublishedLocalPage(trade: LocalTradeKey, city: LocalCityKey) {
