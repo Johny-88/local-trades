@@ -6,7 +6,7 @@ import { homePageStructuredData } from "../../lib/schema";
 
 const title = "Find Local Home & Property Specialists | Local Trades";
 const description =
-  "Find local cleaners, removal companies, locksmiths, heating engineers, tilers, pest controllers and other property specialists. Post your job once, check verified reviews and compare up to 3 interested professionals before you hire.";
+  "Find local home and property specialists across the UK. Choose a service, post your job once, compare verified reviews and up to 3 interested professionals.";
 const socialDescription =
   "Post your job once, hear from up to 3 interested local professionals, check genuine verified reviews and compare your options before choosing who to hire.";
 

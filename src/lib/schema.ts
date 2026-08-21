@@ -35,6 +35,9 @@ export const homePageStructuredData = {
   "@graph": [organization, website],
 } as const;
 
+const aboutCanonical = `${SITE_URL}/about/`;
+const aboutBreadcrumbId = `${aboutCanonical}#breadcrumb`;
+
 export const aboutPageStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -42,14 +45,33 @@ export const aboutPageStructuredData = {
     website,
     {
       "@type": "AboutPage",
-      "@id": `${SITE_URL}/about/#webpage`,
-      url: `${SITE_URL}/about/`,
+      "@id": `${aboutCanonical}#webpage`,
+      url: aboutCanonical,
       name: "About Local Trades",
       description:
         "How Local Trades works, including its independent information and referral role and its relationship with third-party quote services.",
       isPartOf: { "@id": `${SITE_URL}/#website` },
       mainEntity: { "@id": `${SITE_URL}/#organization` },
+      breadcrumb: { "@id": aboutBreadcrumbId },
       inLanguage: "en-GB",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": aboutBreadcrumbId,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About",
+          item: aboutCanonical,
+        },
+      ],
     },
   ],
 } as const;
