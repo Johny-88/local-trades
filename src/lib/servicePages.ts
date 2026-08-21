@@ -32,6 +32,19 @@ export const PUBLISHED_SERVICE_PAGES: readonly ServiceSlug[] = [
  */
 export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[] = [
   { service: "removal-companies", city: "birmingham" },
+  { service: "cleaners", city: "birmingham" },
+  { service: "tilers", city: "birmingham" },
+  { service: "heating-engineers", city: "birmingham" },
+  { service: "locksmiths", city: "birmingham" },
+  { service: "pest-controllers", city: "birmingham" },
+  { service: "tree-surgeons", city: "birmingham" },
+  { service: "architects", city: "birmingham" },
+  { service: "plasterers", city: "birmingham" },
+  { service: "kitchen-fitters", city: "birmingham" },
+  { service: "bathroom-specialists", city: "birmingham" },
+  { service: "drainage-specialists", city: "birmingham" },
+  { service: "driveway-specialists", city: "birmingham" },
+  { service: "window-specialists", city: "birmingham" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
