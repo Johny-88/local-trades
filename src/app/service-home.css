@@ -1,14 +1,10 @@
 main#top h1,
 main#top h2{
-  text-align:center !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
+  text-align:left !important;
 }
 
 .hero h1{
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
+  text-align:left;
 }
 
 .hero p{
@@ -48,9 +44,7 @@ main#top h2{
 }
 
 .service-heading-card .intro h2{
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
+  text-align:left;
 }
 
 .cards.service-cards{
@@ -69,7 +63,7 @@ main#top h2{
 
 @media (max-width:700px){
   .hero h1{
-    text-align:center;
+    text-align:left;
     line-height:1.04;
     margin-bottom:24px;
   }
@@ -90,7 +84,7 @@ main#top h2{
   .service-heading-card .intro h2{
     font-size:clamp(36px,11vw,48px);
     line-height:1.02;
-    text-align:center;
+    text-align:left;
   }
 
   .cards.service-cards{
