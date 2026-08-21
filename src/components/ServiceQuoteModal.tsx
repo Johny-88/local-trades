@@ -1,0 +1,121 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import { buildServiceIframeUrl, type ServiceSlug } from "../lib/serviceIframe";
+
+type ServiceQuoteModalProps = {
+  open: boolean;
+  onClose: () => void;
+  serviceSlug?: ServiceSlug;
+  serviceName?: string;
+};
+
+const MOBILE_QUERY = "(max-width: 700px)";
+
+export function ServiceQuoteModal({ open, onClose, serviceSlug, serviceName }: ServiceQuoteModalProps) {
+  const frameRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    document.body.classList.add("quote-open");
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      document.body.classList.remove("quote-open");
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open, onClose]);
+
+  useEffect(() => {
+    const media = window.matchMedia(MOBILE_QUERY);
+
+    const resetMobileHeight = () => {
+      if (media.matches && frameRef.current) {
+        frameRef.current.style.removeProperty("height");
+      }
+    };
+
+    resetMobileHeight();
+    media.addEventListener("change", resetMobileHeight);
+
+    const onMessage = (event: MessageEvent) => {
+      if (event.origin !== "https://www.myjobquote.co.uk") return;
+
+      const data = event.data;
+      if (!data || typeof data !== "object") return;
+
+      if (data.name === "heightChange" && frameRef.current) {
+        if (media.matches) {
+          frameRef.current.style.removeProperty("height");
+          return;
+        }
+
+        const height = Number(data.value);
+        if (Number.isFinite(height) && height >= 200 && height <= 5000) {
+          frameRef.current.style.height = `${height}px`;
+        }
+      }
+
+      if (data.name === "pageChange") {
+        document.querySelector(".quote-box")?.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("message", onMessage);
+
+    return () => {
+      media.removeEventListener("change", resetMobileHeight);
+      window.removeEventListener("message", onMessage);
+    };
+  }, []);
+
+  if (!open || typeof document === "undefined") return null;
+
+  return createPortal(
+    <div
+      className="modal open"
+      role="presentation"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div className="quote-box" role="dialog" aria-modal="true" aria-label="Quote request">
+        <div className="box-top">
+          <div>
+            <span className="smallcap">Your quote request</span>
+            <h3>{serviceName ? `Find a local ${serviceName}` : "Tell us what needs doing"}</h3>
+            <p>
+              {serviceName
+                ? `${serviceName} is already selected. Tell us a little about the job and where it needs doing.`
+                : "Choose the type of service and tell us a little about the job."}
+            </p>
+          </div>
+          <button className="close" onClick={onClose} aria-label="Close quote form">
+            ×
+          </button>
+        </div>
+
+        <div className="quote-frame-wrap">
+          <iframe
+            ref={frameRef}
+            src={buildServiceIframeUrl(serviceSlug)}
+            width="100%"
+            height="760"
+            frameBorder="0"
+            className="quote-frame ready"
+            title="Local service quote request"
+          />
+        </div>
+
+        <div className="quote-footer">Free for homeowners · Up to 3 local quotes · No obligation to hire</div>
+      </div>
+    </div>,
+    document.body,
+  );
+}
