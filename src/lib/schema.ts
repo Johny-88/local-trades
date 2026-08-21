@@ -11,7 +11,7 @@ const organization = {
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   description:
-    "Independent UK information and referral website helping homeowners find local home and property specialists, describe a job and continue to a third-party quote service when they want to request quotes.",
+    "Independent UK information and referral website helping homeowners find local home and property specialists, describe a job, compare interested professionals and continue to a third-party quote service when they want to request quotes.",
   logo: {
     "@type": "ImageObject",
     url: `${SITE_URL}/assets/logo.svg`,
@@ -53,6 +53,26 @@ export const aboutPageStructuredData = {
   ],
 } as const;
 
+type ServiceCategoryStructuredDataOptions = {
+  canonicalPath: string;
+  title: string;
+  description: string;
+  serviceName: string;
+  serviceType: string;
+  breadcrumbItems: BreadcrumbItem[];
+};
+
+type LocalServiceStructuredDataOptions = {
+  canonicalPath: string;
+  title: string;
+  description: string;
+  serviceName: string;
+  serviceType: string;
+  city: string;
+  region: string;
+  breadcrumbItems: BreadcrumbItem[];
+};
+
 function absoluteUrl(path: string) {
   return new URL(path, `${SITE_URL}/`).toString();
 }
@@ -91,6 +111,102 @@ export function createInfoPageStructuredData(
         name: title,
         description,
         isPartOf: { "@id": `${SITE_URL}/#website` },
+        breadcrumb: { "@id": breadcrumbId },
+        inLanguage: "en-GB",
+      },
+      breadcrumbList(breadcrumbId, breadcrumbItems),
+    ],
+  };
+}
+
+export function createServiceCategoryPageStructuredData({
+  canonicalPath,
+  title,
+  description,
+  serviceName,
+  serviceType,
+  breadcrumbItems,
+}: ServiceCategoryStructuredDataOptions) {
+  const canonical = absoluteUrl(canonicalPath);
+  const pageId = `${canonical}#webpage`;
+  const serviceId = `${canonical}#service`;
+  const breadcrumbId = `${canonical}#breadcrumb`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organization,
+      website,
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: serviceName,
+        serviceType,
+        areaServed: {
+          "@type": "Country",
+          name: "United Kingdom",
+        },
+        url: canonical,
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: canonical,
+        name: title,
+        description,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": serviceId },
+        breadcrumb: { "@id": breadcrumbId },
+        inLanguage: "en-GB",
+      },
+      breadcrumbList(breadcrumbId, breadcrumbItems),
+    ],
+  };
+}
+
+export function createLocalServicePageStructuredData({
+  canonicalPath,
+  title,
+  description,
+  serviceName,
+  serviceType,
+  city,
+  region,
+  breadcrumbItems,
+}: LocalServiceStructuredDataOptions) {
+  const canonical = absoluteUrl(canonicalPath);
+  const pageId = `${canonical}#webpage`;
+  const serviceId = `${canonical}#service`;
+  const breadcrumbId = `${canonical}#breadcrumb`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      organization,
+      website,
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: serviceName,
+        serviceType,
+        areaServed: {
+          "@type": "City",
+          name: city,
+          containedInPlace: {
+            "@type": "AdministrativeArea",
+            name: region,
+          },
+        },
+        url: canonical,
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: canonical,
+        name: title,
+        description,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": serviceId },
         breadcrumb: { "@id": breadcrumbId },
         inLanguage: "en-GB",
       },
