@@ -1,0 +1,28 @@
+/* Info/legal page summary strip. Keep long headings from starving the summary copy. */
+.local-trade-page .info-answer-box{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(28px,5vw,64px);
+  align-items:center;
+}
+
+.local-trade-page .info-answer-box h2{
+  max-width:100%;
+}
+
+.local-trade-page .info-answer-box > div{
+  min-width:0;
+}
+
+.local-trade-page .info-answer-box p{
+  margin:0;
+  max-width:none;
+  line-height:1.65;
+}
+
+@media (max-width:700px){
+  .local-trade-page .info-answer-box{
+    grid-template-columns:1fr;
+    gap:12px;
+    align-items:start;
+  }
+}
