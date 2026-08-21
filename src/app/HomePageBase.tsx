@@ -1,5 +1,5 @@
 import { HomepageExtraContent } from "../components/HomepageExtraContent";
-import { TradeFinderForm } from "../components/TradeFinderForm";
+import { ServiceFinderForm } from "../components/ServiceFinderForm";
 
 export default function HomePageBase() {
   return (
@@ -7,19 +7,19 @@ export default function HomePageBase() {
       <section className="hero">
         <div className="wrap hero-layout">
           <div className="hero-copy">
-            <span className="smallcap">A calmer way to hire locally</span>
-            <h1>Good local trades, without all the noise.</h1>
+            <span className="smallcap">Local specialists, made simpler</span>
+            <h1>Find the right local specialist for the job.</h1>
             <p>
-              Need a local tradesperson for a job at home? Describe the job once and it can be shared with relevant local tradespeople. Up to three who are interested can get in touch with you. You can then view their profiles, check verified customer reviews and compare quotes before you decide.
+              From cleaning and removals to heating, locks, tiling, pest control and specialist property work, choose the service you need and describe the job once. Up to three interested local professionals can get in touch, so you can compare your options before deciding.
             </p>
             <div className="actions">
-              <a className="btn" href="#services">Find the right trade →</a>
-              <a className="btn ghost" href="#why">Why use this?</a>
+              <a className="btn" href="#services">Choose a service →</a>
+              <a className="btn ghost" href="#why">How it works</a>
             </div>
             <div className="hero-trust">
-              <span><b>Post once</b></span>
-              <span><b>Up to 3 trades</b> can get in touch</span>
-              <span><b>100% verified reviews</b></span>
+              <span><b>Free</b> for homeowners</span>
+              <span><b>Up to 3</b> local responses</span>
+              <span><b>No obligation</b> to hire</span>
             </div>
           </div>
         </div>
@@ -28,15 +28,17 @@ export default function HomePageBase() {
       <section className="services" id="services">
         <div className="wrap">
           <div className="intro">
-            <span className="smallcap">Start here</span>
-            <h2>What needs doing?</h2>
-            <p>Choose the closest match. You’ll describe the actual job in the next step.</p>
+            <span className="smallcap">Start with the job</span>
+            <h2>What kind of specialist do you need?</h2>
+            <p>Choose the closest match below. The correct service category is already selected when the quote form opens.</p>
           </div>
-          <TradeFinderForm />
+
+          <ServiceFinderForm />
+
           <div className="reassure">
-            <span><b>✓ Free</b> for homeowners</span>
-            <span><b>✓ Up to 3</b> interested trades can get in touch</span>
-            <span><b>✓ No obligation</b> to hire</span>
+            <span><b>✓ 14 direct service categories</b></span>
+            <span><b>✓ Other</b> opens the full service finder</span>
+            <span><b>✓ One job request</b> to get started</span>
           </div>
         </div>
       </section>
@@ -44,16 +46,16 @@ export default function HomePageBase() {
       <section className="story" id="why">
         <div className="wrap story-grid">
           <div>
-            <span className="smallcap">Why this is different</span>
-            <h2>Real jobs. Real customers. Reviews you can actually trust.</h2>
+            <span className="smallcap">A simpler first step</span>
+            <h2>Describe the job once. Let interested local specialists come to you.</h2>
             <p className="lead">
-              You do not browse a list and choose someone before posting the job. First, you describe what needs doing. Relevant local tradespeople can then review the job, and up to three who are interested can get in touch. Once they do, you can view their profiles and customer reviews before deciding who you want to speak to or hire.
+              You do not need to search through endless listings or repeat the same details again and again. Pick the service that matches the job, explain what needs doing, and relevant local professionals can review the request. Up to three who are interested can then get in touch.
             </p>
             <div className="verified-box">
-              <span className="verified-badge">✓ 100% verified customer reviews</span>
-              <h3>See the feedback when a trade responds.</h3>
+              <span className="verified-badge">✓ Compare before you decide</span>
+              <h3>Profiles, customer feedback and quotes in one journey.</h3>
               <p>
-                <strong>The reviews sit on the tradesperson’s profile, so you can check them once an interested trade gets in touch about your job.</strong> The quote service uses a closed-loop feedback system: reviews are submitted by homeowners who had work completed through the service by a verified trade member.
+                <strong>When an interested professional responds, you can review the information available on their profile before choosing what to do next.</strong> Ask questions, compare the proposed work and price, and only proceed if you are comfortable.
               </p>
             </div>
           </div>
@@ -62,22 +64,22 @@ export default function HomePageBase() {
             <div className="note">
               <i>1</i>
               <div>
-                <b>Describe the job once</b>
-                <span>Tell us what needs doing, where the job is and the practical details that matter.</span>
+                <b>Choose the right service</b>
+                <span>Start with one of the fourteen specialist categories, or use Other if your job sits outside them.</span>
               </div>
             </div>
             <div className="note review-note">
               <i>2</i>
               <div>
-                <b>Interested local trades get in touch</b>
-                <span>Your job is shared with relevant tradespeople. Up to three who are interested can contact you about it.</span>
+                <b>Describe what needs doing</b>
+                <span>Add the job details and location so suitable local professionals can understand the request.</span>
               </div>
             </div>
             <div className="note">
               <i>3</i>
               <div>
-                <b>Check profiles, reviews and quotes</b>
-                <span>See who responded, review their customer feedback and compare your options. If nobody feels right, you do not have to hire.</span>
+                <b>Compare your options</b>
+                <span>Up to three interested professionals can respond. Compare the information they provide before deciding whether to hire.</span>
               </div>
             </div>
           </div>
@@ -88,23 +90,23 @@ export default function HomePageBase() {
         <div className="wrap">
           <div className="intro">
             <span className="smallcap">How it works</span>
-            <h2>Simple enough to do from the sofa.</h2>
+            <h2>Three steps from job to local help.</h2>
           </div>
           <div className="how-grid">
             <div className="how-card">
               <small>ONE</small>
-              <h3>Pick the trade</h3>
-              <p>Choose the service that best fits what you need done.</p>
+              <h3>Pick the service</h3>
+              <p>Choose the category that best matches the work you need done.</p>
             </div>
             <div className="how-card">
               <small>TWO</small>
-              <h3>Tell us the job</h3>
-              <p>Add your postcode and the practical details a tradesperson needs.</p>
+              <h3>Tell us about the job</h3>
+              <p>Add your postcode and the practical details a local specialist needs to understand the work.</p>
             </div>
             <div className="how-card">
               <small>THREE</small>
-              <h3>Interested trades get in touch</h3>
-              <p>Up to three can contact you. You can then view their profiles and verified reviews, discuss the job and compare quotes before choosing.</p>
+              <h3>Hear from interested professionals</h3>
+              <p>Up to three can get in touch. Compare profiles, feedback and quotes before choosing what happens next.</p>
             </div>
           </div>
         </div>
@@ -115,28 +117,28 @@ export default function HomePageBase() {
           <div>
             <span className="smallcap">Questions</span>
             <h2>What homeowners usually want to know.</h2>
-            <p>A few clear answers before you post your job.</p>
+            <p>A few clear answers before you send a job request.</p>
           </div>
           <div>
             <details open>
-              <summary>Is it free to post my job?</summary>
-              <div className="answer">Yes. It is free for homeowners to post a job and receive quotes.</div>
+              <summary>Which services can I choose directly?</summary>
+              <div className="answer">Local Trades currently gives direct access to removal companies, cleaners, tilers, heating engineers, locksmiths, pest controllers, tree surgeons, architects, plasterers, kitchen fitters, bathroom specialists, drainage specialists, driveway specialists and window specialists.</div>
             </details>
             <details>
-              <summary>What happens after I describe my job?</summary>
-              <div className="answer">Your job is shared with relevant local tradespeople. Up to three who are interested can get in touch with you about the work. Once they do, you can view their profiles and customer reviews before deciding how you want to proceed.</div>
+              <summary>What if my job does not fit one of those categories?</summary>
+              <div className="answer">Choose Other. It opens the full service finder so you can select the type of work that best matches your job.</div>
             </details>
             <details>
-              <summary>How many quotes can I receive?</summary>
-              <div className="answer">Up to three interested local tradespeople can contact you about the same job and provide a quote or arrange to discuss the work.</div>
+              <summary>Is it free to request quotes?</summary>
+              <div className="answer">Yes. It is free for homeowners to submit a job request and receive responses.</div>
             </details>
             <details>
-              <summary>Do I have to hire one of the tradespeople?</summary>
-              <div className="answer">No. There is no obligation to hire anyone who gets in touch.</div>
+              <summary>How many professionals can contact me?</summary>
+              <div className="answer">Up to three interested local professionals can get in touch about the same job.</div>
             </details>
             <details>
-              <summary>When can I see the customer reviews?</summary>
-              <div className="answer">After a tradesperson expresses interest in your posted job, you can view their profile and reviews. The quote service uses a closed-loop feedback system, with reviews submitted by homeowners who had work completed through the service by a verified trade member.</div>
+              <summary>Do I have to hire someone who responds?</summary>
+              <div className="answer">No. There is no obligation to hire. Review the available information, discuss the job and decide only if one of the options feels right.</div>
             </details>
           </div>
         </div>
