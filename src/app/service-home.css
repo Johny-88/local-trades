@@ -272,7 +272,7 @@ main#top .smallcap{
 }
 
 .site-footer .footer-grid-home{
-  grid-template-columns:1.35fr 1fr .85fr;
+  grid-template-columns:1.05fr 1.55fr .75fr;
 }
 
 .site-footer .footer-grid-simple{
@@ -305,6 +305,12 @@ main#top .smallcap{
   padding:0;
   display:grid;
   gap:9px;
+}
+
+.site-footer .footer-trade-links{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:24px;
+  row-gap:9px;
 }
 
 .site-footer .footer-links li{
@@ -400,6 +406,10 @@ main#top .smallcap{
 
   .site-footer .footer-grid-home .footer-brand{
     grid-column:1 / -1;
+  }
+
+  .site-footer .footer-trade-links{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
@@ -537,6 +547,10 @@ main#top .smallcap{
 
   .site-footer .footer-grid-home .footer-brand{
     grid-column:auto;
+  }
+
+  .site-footer .footer-trade-links{
+    grid-template-columns:1fr;
   }
 
   .site-footer .footer-bottom{
