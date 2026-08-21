@@ -25,6 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang={SITE_LANGUAGE}>
       <body>
+        <a className="skip-link" href="#top">Skip to main content</a>
         <SiteHeader />
         {children}
         <SiteFooter />
