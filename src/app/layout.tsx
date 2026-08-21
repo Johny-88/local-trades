@@ -6,6 +6,7 @@ import { SITE_LANGUAGE, SITE_NAME, SITE_URL, THEME_COLOR } from "../lib/site";
 import "./globals.css";
 import "./architecture.css";
 import "./service-home.css";
+import "./info-pages.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
