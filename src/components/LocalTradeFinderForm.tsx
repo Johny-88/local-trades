@@ -71,6 +71,52 @@ function LocalQuoteCta({
         </div>
 
         <p className="local-quote-explainer">{intro}</p>
+
+        <style>{`
+          .local-trade-page .local-quote-card .primary-button {
+            margin-top: 18px;
+          }
+          .local-trade-page .local-quote-card > .microcopy {
+            margin: 10px 0 0;
+          }
+          .local-trade-page .local-quote-card .local-quote-points {
+            margin: 16px 0 0;
+          }
+          .local-trade-page .local-quote-card > .local-quote-explainer {
+            margin: 14px 0 0;
+            color: var(--lt-muted);
+            font-size: .88rem;
+            line-height: 1.5;
+          }
+          @media (max-width: 700px) {
+            .local-trade-page .hero-grid {
+              grid-template-columns: 1fr;
+              row-gap: 14px;
+            }
+            .local-trade-page .hero-grid > div:first-child {
+              display: contents;
+            }
+            .local-trade-page .hero-grid > div:first-child > .eyebrow {
+              order: 1;
+              margin-bottom: 0;
+            }
+            .local-trade-page .hero-grid > div:first-child > h1 {
+              order: 2;
+            }
+            .local-trade-page .hero-grid > .local-quote-card {
+              order: 3;
+              margin-top: 4px;
+            }
+            .local-trade-page .hero-grid > div:first-child > .hero-copy {
+              order: 4;
+              margin-top: 8px;
+            }
+            .local-trade-page .hero-grid > div:first-child > .hero-points {
+              order: 5;
+              margin-top: 10px;
+            }
+          }
+        `}</style>
       </aside>
 
       <QuoteModal
