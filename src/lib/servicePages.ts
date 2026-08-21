@@ -9,7 +9,22 @@ export type PublishedLocalServicePage = {
  * Add a service slug here only when its top-level SEO landing page exists and is ready to index.
  * The sitemap reads this registry automatically.
  */
-export const PUBLISHED_SERVICE_PAGES: readonly ServiceSlug[] = [];
+export const PUBLISHED_SERVICE_PAGES: readonly ServiceSlug[] = [
+  "removal-companies",
+  "cleaners",
+  "tilers",
+  "heating-engineers",
+  "locksmiths",
+  "pest-controllers",
+  "tree-surgeons",
+  "architects",
+  "plasterers",
+  "kitchen-fitters",
+  "bathroom-specialists",
+  "drainage-specialists",
+  "driveway-specialists",
+  "window-specialists",
+];
 
 /**
  * Add a location page here only after the route and its researched local content are complete.
