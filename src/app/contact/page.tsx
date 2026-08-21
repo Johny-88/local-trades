@@ -3,17 +3,18 @@ import { InfoPageShell, InfoSection } from "../../components/InfoPageShell";
 import { JsonLd } from "../../components/JsonLd";
 import { createInfoPageStructuredData, type BreadcrumbItem } from "../../lib/schema";
 import { createPageMetadata } from "../../lib/seo";
+import { CONTACT_EMAIL, OPERATOR_NAME } from "../../lib/site";
 
 const title = "Contact Local Trades | Help & Enquiries";
-const description = "Contact Local Trades for website questions, feedback, privacy enquiries, corrections or partnership questions.";
+const description = "Contact Local Trades by email for website questions, feedback, privacy enquiries, corrections or partnership questions.";
 const canonicalPath = "/contact/";
 
 export const metadata: Metadata = createPageMetadata({
   title,
   description,
   path: canonicalPath,
-  openGraphDescription: "Need to contact Local Trades? Get in touch about the website, feedback, corrections, privacy or partnership questions.",
-  twitterDescription: "Contact Local Trades about website questions, feedback, corrections, privacy or partnership enquiries.",
+  openGraphDescription: "Contact Local Trades directly by email for website questions, feedback, corrections, privacy enquiries or partnership questions.",
+  twitterDescription: "Contact Local Trades by email for help, feedback, corrections, privacy enquiries or partnership questions.",
 });
 
 const breadcrumbItems: BreadcrumbItem[] = [
@@ -28,27 +29,69 @@ export default function ContactPage() {
       <InfoPageShell
         eyebrow="Contact Local Trades"
         title="How can we help?"
-        intro="Use this page for questions about Local Trades, website feedback, corrections, privacy enquiries or legitimate partnership questions."
+        intro="For questions about Local Trades, website feedback, corrections, privacy enquiries or legitimate partnership questions, email us directly. We keep contact simple and do not require an account or contact form."
         breadcrumbItems={breadcrumbItems}
-        summaryTitle="Questions about a quote or a tradesperson?"
-        summary={<p>Local Trades is an information and referral website. A specific job, quote, booking, payment or workmanship issue should normally be raised with the relevant tradesperson or the partner service through which the introduction was made.</p>}
+        summaryTitle="The quickest way to reach us is by email"
+        summary={
+          <p>
+            Write to <a href={`mailto:${CONTACT_EMAIL}`}><strong>{CONTACT_EMAIL}</strong></a>. Local Trades is operated by <strong>{OPERATOR_NAME}</strong>.
+          </p>
+        }
       >
-        <InfoSection id="website-help" eyebrow="Website enquiries" title="What can you contact Local Trades about?">
+        <InfoSection
+          id="email-us"
+          eyebrow="Direct contact"
+          title="Email Local Trades"
+          intro="We use a direct email address rather than an on-site contact form, so your message is sent through your own email service rather than being collected through a Local Trades form."
+        >
+          <div className="content-card">
+            <h3>Contact email</h3>
+            <p><a href={`mailto:${CONTACT_EMAIL}`}><strong>{CONTACT_EMAIL}</strong></a></p>
+            <p><strong>Operator:</strong> {OPERATOR_NAME}</p>
+            <p>
+              Please include enough detail for us to understand the issue, such as the page you were viewing, the type of question you have and any correction you think is needed. Do not send passwords, payment-card details or unnecessary sensitive information.
+            </p>
+            <div className="specialist-links" style={{ marginTop: 24 }}>
+              <a className="cta-button" href={`mailto:${CONTACT_EMAIL}`}>Email Local Trades</a>
+            </div>
+          </div>
+        </InfoSection>
+
+        <InfoSection
+          id="what-we-can-help-with"
+          eyebrow="Useful enquiries"
+          title="What can you contact us about?"
+          soft
+        >
           <div className="content-card">
             <ul className="bullet-list">
-              <li><strong>Website problems:</strong> broken links, accessibility issues or something that does not work as expected.</li>
-              <li><strong>Corrections:</strong> factual information that you believe should be reviewed.</li>
-              <li><strong>Privacy:</strong> questions about personal data, cookies or data-protection rights.</li>
-              <li><strong>Commercial enquiries:</strong> legitimate partnership or business questions relating to Local Trades.</li>
-              <li><strong>General feedback:</strong> suggestions that could make the site clearer or more useful.</li>
+              <li><span className="tick" aria-hidden="true">✓</span><span><strong>Website questions:</strong> broken links, accessibility issues or something that does not work as expected.</span></li>
+              <li><span className="tick" aria-hidden="true">✓</span><span><strong>Corrections:</strong> factual information, pricing guidance or local information that you believe should be reviewed.</span></li>
+              <li><span className="tick" aria-hidden="true">✓</span><span><strong>Privacy:</strong> questions about personal information, cookies or data-protection rights.</span></li>
+              <li><span className="tick" aria-hidden="true">✓</span><span><strong>Commercial enquiries:</strong> legitimate partnership, affiliate or business questions relating to Local Trades.</span></li>
+              <li><span className="tick" aria-hidden="true">✓</span><span><strong>General feedback:</strong> suggestions that could make the site clearer, more useful or easier to use.</span></li>
             </ul>
           </div>
         </InfoSection>
-        <InfoSection id="job-enquiries" eyebrow="Before you contact us" title="Questions about a specific job" soft>
+
+        <InfoSection
+          id="job-enquiries"
+          eyebrow="Before you email"
+          title="Questions about a specific professional or job"
+        >
           <div className="content-card">
-            <p>Local Trades does not employ the tradespeople introduced through third-party quote services and does not manage the contract between a homeowner and a tradesperson.</p>
-            <p>For urgent safety issues, contact the appropriate emergency service or a suitably qualified emergency tradesperson rather than relying on a website enquiry.</p>
-            <p>For more information about how the site works, read our <a href="/terms/">Terms &amp; Conditions</a>, <a href="/privacy/">Privacy Policy</a> and <a href="/cookies/">Cookie Policy</a>.</p>
+            <p>
+              Local Trades is an independent information and referral website. We do not employ or control the professionals introduced through third-party partner services and we do not manage the contract between a homeowner and a professional.
+            </p>
+            <p>
+              If you have already submitted a job through a partner service or hired someone, questions about that job, quote, booking, payment, workmanship or dispute should normally be raised directly with the relevant professional or the partner service through which the introduction was made.
+            </p>
+            <p>
+              For urgent safety issues, do not rely on email to Local Trades. Contact the appropriate emergency service or a suitably qualified emergency professional for the situation.
+            </p>
+            <p>
+              For more information about how the site works, read our <a href="/transparency/">Transparency page</a>, <a href="/terms/">Terms &amp; Conditions</a>, <a href="/privacy/">Privacy Policy</a> and <a href="/cookies/">Cookie Policy</a>.
+            </p>
           </div>
         </InfoSection>
       </InfoPageShell>
