@@ -14,6 +14,9 @@ type LocalCtaProps = {
   containerId: string;
   buttonLabel: string;
   tradeName?: string;
+  title?: string;
+  intro?: string;
+  microcopy?: string;
 };
 
 export function LocalTradeFinderForm(props: LegacyProps | LocalCtaProps) {
