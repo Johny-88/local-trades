@@ -16,7 +16,6 @@ export function SiteFooter() {
           <a href="/">Home</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
-          <a href="/removal-companies/birmingham/">Removal companies Birmingham</a>
         </div>
 
         <div className="footer-links" aria-label="Legal">
