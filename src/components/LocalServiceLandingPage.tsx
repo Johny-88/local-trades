@@ -89,9 +89,9 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
           <section className="section" id="services" aria-labelledby="jobs-title">
             <div className="container">
               <div className="section-head">
-                <p className="eyebrow">Removal services</p>
-                <h2 id="jobs-title">What can a Birmingham removal company help with?</h2>
-                <p>Choose a company whose experience matches the scale and practical requirements of your move.</p>
+                <p className="eyebrow">Common {content.serviceName.toLowerCase()} services</p>
+                <h2 id="jobs-title">What can {content.servicePlural.toLowerCase()} in {content.locationName} help with?</h2>
+                <p>Choose a professional whose experience matches the scale and practical requirements of your job.</p>
               </div>
               <div className="job-grid">
                 {content.jobs.map((job) => (
@@ -131,26 +131,26 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
                   ))}
                 </ul>
                 <p style={{ marginTop: 22, fontSize: ".84rem" }}>
-                  Cost sources: <a href="https://www.myjobquote.co.uk/costs/removals-cost" rel="nofollow">MyJobQuote 2026 removal cost guide</a> and <a href="https://www.checkatrade.com/blog/cost-guides/house-removal-costs/" rel="nofollow">Checkatrade 2026 removal cost guide</a>.
+                  Cost sources: <a href="https://www.myjobquote.co.uk/costs/removals-cost">MyJobQuote 2026 removal cost guide</a> and <a href="https://www.checkatrade.com/blog/cost-guides/house-removal-costs/">Checkatrade 2026 removal cost guide</a>.
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="section" id="birmingham-context" aria-labelledby="local-context-title">
+          <section className="section" id={`${content.locationSlug}-context`} aria-labelledby="local-context-title">
             <div className="container">
               <div className="section-head">
                 <p className="eyebrow">{content.localContext.eyebrow}</p>
                 <h2 id="local-context-title">{content.localContext.title}</h2>
                 <p>{content.localContext.intro}</p>
               </div>
-              <div className="job-grid">
+              <div className="two-col">
                 {content.localContext.items.map((item) => (
                   <article className="job-card" key={item.title}>
                     <div className="job-icon"><LineIcon paths={["M12 21s7-4.3 7-10a7 7 0 1 0-14 0c0 5.7 7 10 7 10Z", "M12 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4"]} /></div>
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>
-                    <p style={{ marginTop: 14, fontSize: ".8rem" }}><a href={item.source.url} rel="nofollow">Source: {item.source.label}</a></p>
+                    <p style={{ marginTop: 14, fontSize: ".8rem" }}><a href={item.source.url}>Source: {item.source.label}</a></p>
                   </article>
                 ))}
               </div>
@@ -160,10 +160,10 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
           <section className="section section-soft" id="areas" aria-labelledby="areas-title">
             <div className="container local-grid">
               <div>
-                <p className="eyebrow">Local to Birmingham</p>
+                <p className="eyebrow">Local to {content.locationName}</p>
                 <h2 id="areas-title">{content.areas.title}</h2>
                 <p className="local-muted">{content.areas.intro}</p>
-                <div className="area-cloud" aria-label="Birmingham areas">
+                <div className="area-cloud" aria-label={`${content.locationName} areas`}>
                   {content.areas.items.map((area) => <span className="area-pill" key={area}>{area}</span>)}
                 </div>
               </div>
@@ -216,8 +216,8 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
             <div className="container">
               <div className="section-head center">
                 <p className="eyebrow">Questions</p>
-                <h2 id="faq-title">Removal companies in Birmingham: common questions</h2>
-                <p>Useful answers before you post the move.</p>
+                <h2 id="faq-title">{content.servicePlural} in {content.locationName}: common questions</h2>
+                <p>Useful answers before you post the job.</p>
               </div>
               <div className="faq-list">
                 {content.faq.map(([question, answer]) => (
