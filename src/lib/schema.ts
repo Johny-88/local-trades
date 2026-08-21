@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL } from "./site";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME, SITE_URL } from "./site";
 
 export type BreadcrumbItem = {
   name: string;
@@ -10,6 +10,11 @@ const organization = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: `${SITE_URL}/`,
+  email: CONTACT_EMAIL,
+  founder: {
+    "@type": "Person",
+    name: OPERATOR_NAME,
+  },
   description:
     "Independent UK information and referral website helping homeowners find local home and property specialists, describe a job, compare interested professionals and continue to a third-party quote service when they want to request quotes.",
   logo: {
