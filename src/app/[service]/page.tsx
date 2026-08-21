@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceCategoryLandingPage } from "../../components/ServiceCategoryLandingPage";
 import { getServiceCategory } from "../../lib/serviceCategoryContent";
-import { getLocalServiceContent } from "../../lib/localServiceContent";
+import { getLocalServiceContent } from "../../lib/localServiceLookup";
 import { SERVICE_PAGE_DETAILS } from "../../lib/servicePageContent";
 import {
   PUBLISHED_LOCAL_SERVICE_PAGES,
