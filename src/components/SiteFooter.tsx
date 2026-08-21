@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { serviceCategories } from "../lib/serviceCategoryContent";
 import { servicePagePath } from "../lib/servicePages";
+import { CONTACT_EMAIL, OPERATOR_NAME } from "../lib/site";
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -18,6 +19,10 @@ export function SiteFooter() {
               <span className="brand-word">Local <strong>Trades</strong></span>
             </a>
             <p>Helping UK homeowners describe a job once, find the right kind of local specialist and compare their options before hiring.</p>
+            <p>
+              Operated by {OPERATOR_NAME}<br />
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            </p>
           </div>
 
           {isHome ? (
@@ -37,6 +42,7 @@ export function SiteFooter() {
             <h2>Information</h2>
             <ul className="footer-links">
               <li><a href="/about/">About Local Trades</a></li>
+              <li><a href="/transparency/">Transparency</a></li>
               <li><a href="/contact/">Contact</a></li>
               <li><a href="/privacy/">Privacy Policy</a></li>
               <li><a href="/cookies/">Cookie Policy</a></li>
