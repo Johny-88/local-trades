@@ -23,7 +23,7 @@ export function ServiceCategoryLandingPage({ service, details, breadcrumbItems, 
   return (
     <>
       <JsonLd data={structuredData} />
-      <div className="local-trade-page">
+      <div className="local-trade-page service-category-page">
         <Breadcrumbs items={breadcrumbItems} />
         <main id="top">
           <section className="hero" aria-labelledby="service-hero-title">
