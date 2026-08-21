@@ -72,6 +72,13 @@ function LocalQuoteCta({
           .local-trade-page .hero-points {
             display: none !important;
           }
+          .local-trade-page .hero-copy {
+            padding: 20px 22px;
+            border: 1px solid var(--lt-line);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, .82);
+            box-shadow: 0 8px 24px rgba(41, 76, 63, .05);
+          }
           @media (max-width: 700px) {
             .local-trade-page .hero-grid {
               grid-template-columns: 1fr;
@@ -94,6 +101,7 @@ function LocalQuoteCta({
             .local-trade-page .hero-grid > div:first-child > .hero-copy {
               order: 4;
               margin-top: 8px;
+              padding: 18px 18px;
             }
           }
         `}</style>
