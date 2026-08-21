@@ -21,9 +21,9 @@ export function SiteFooter() {
           </div>
 
           {isHome ? (
-            <div className="footer-col">
+            <div className="footer-col footer-trades">
               <h2>Find a specialist</h2>
-              <ul className="footer-links">
+              <ul className="footer-links footer-trade-links">
                 {serviceCategories.map((service) => (
                   <li key={service.slug}>
                     <a href={servicePagePath(service.slug)}>{service.plural}</a>
