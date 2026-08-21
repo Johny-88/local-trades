@@ -6,9 +6,9 @@ import { homePageStructuredData } from "../../lib/schema";
 
 const title = "Find Local Home & Property Specialists | Local Trades";
 const description =
-  "Find cleaners, removal companies, locksmiths, heating engineers, tilers, pest controllers and other local specialists. Post your job once and compare up to 3 responses.";
+  "Find local cleaners, removal companies, locksmiths, heating engineers, tilers, pest controllers and other property specialists. Post your job once, check verified reviews and compare up to 3 interested professionals before you hire.";
 const socialDescription =
-  "Choose the service you need, describe the job once and hear from up to 3 interested local professionals before deciding who to hire.";
+  "Post your job once, hear from up to 3 interested local professionals, check genuine verified reviews and compare your options before choosing who to hire.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
