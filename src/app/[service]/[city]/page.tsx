@@ -5,6 +5,7 @@ import { getLocalServiceContent } from "../../../lib/localServiceContent";
 import {
   PUBLISHED_LOCAL_SERVICE_PAGES,
   localServicePagePath,
+  servicePagePath,
 } from "../../../lib/servicePages";
 import { createPageMetadata } from "../../../lib/seo";
 import { createLocalServicePageStructuredData, type BreadcrumbItem } from "../../../lib/schema";
@@ -67,11 +68,13 @@ export default async function LocalServiceCityPage({
   if (!content) notFound();
 
   const canonicalPath = localServicePagePath(content.serviceSlug, content.locationSlug);
+  const parentServicePath = servicePagePath(content.serviceSlug);
   const title = pageTitle(content.servicePlural, content.locationName);
   const description = `Find ${content.servicePlural.toLowerCase()} in ${content.locationName}. Post your job once, compare interested local professionals, verified reviews and quotes before choosing who to hire.`;
 
   const breadcrumbItems: BreadcrumbItem[] = [
     { name: "Home", href: "/" },
+    { name: content.servicePlural, href: parentServicePath },
     { name: `${content.servicePlural} ${content.locationName}`, href: canonicalPath },
   ];
 
