@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { SITE_LOCALE, SITE_NAME, SITE_URL } from "./site";
+import { SERVICE_CATEGORY_IDS, type ServiceSlug } from "./serviceIframe";
+import { DEFAULT_OG_IMAGE, SITE_LOCALE, SITE_NAME, SITE_URL } from "./site";
 
 type PageMetadataOptions = {
   title: string;
@@ -10,16 +11,20 @@ type PageMetadataOptions = {
   twitterDescription?: string;
 };
 
-function getOgImage(path: string): string {
-  if (path.startsWith("/handyman/")) return "/og/handyman.jpg";
-  if (path.startsWith("/plumber/")) return "/og/plumber.jpg";
-  if (path.startsWith("/electrician/")) return "/og/electrician.jpg";
-  if (path.startsWith("/roofer/")) return "/og/roofer.jpg";
-  if (path.startsWith("/painter-decorator/")) return "/og/painter-decorator.jpg";
-  if (path.startsWith("/flooring-fitter/")) return "/og/flooring-fitter.jpg";
-  if (path.startsWith("/builder/")) return "/og/builder.jpg";
-  if (path.startsWith("/gardener/")) return "/og/gardener.jpg";
-  return "/og/home.jpg";
+const SERVICE_SLUGS = Object.keys(SERVICE_CATEGORY_IDS) as ServiceSlug[];
+
+function serviceSlugFromPath(path: string): ServiceSlug | undefined {
+  const firstSegment = path.split("/").filter(Boolean)[0];
+  return SERVICE_SLUGS.find((slug) => slug === firstSegment);
+}
+
+export function getOgImage(path: string): string {
+  const serviceSlug = serviceSlugFromPath(path);
+  if (serviceSlug) {
+    return `/og/${serviceSlug}.png`;
+  }
+
+  return DEFAULT_OG_IMAGE;
 }
 
 export function createPageMetadata({
