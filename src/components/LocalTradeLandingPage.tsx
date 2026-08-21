@@ -2,8 +2,13 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
 import { LocalTradeFinderForm } from "./LocalTradeFinderForm";
 import type { TradeSlug } from "../lib/affiliateLinks";
-import { getLocalAreaProfile } from "../lib/localAreaContent";
-import type { LocalCityKey } from "../lib/localPages";
+import { getLocalAreaProfile } from "../lib/localAreaRegistry";
+import {
+  LOCAL_TRADES,
+  PUBLISHED_LOCAL_PAGES,
+  localPagePath,
+  type LocalCityKey,
+} from "../lib/localPages";
 import { createLocalTradePageStructuredData, type BreadcrumbItem } from "../lib/schema";
 
 export type LocalCityPageContent = {
@@ -63,6 +68,15 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
   const findAnchor = `find-${content.trade === "painter-decorator" ? "decorator" : content.trade}`;
   const areaProfile = getLocalAreaProfile(content.locationKey);
   const localTradeContent = areaProfile?.tradeContent[content.trade];
+  const publishedCitySpecialists = PUBLISHED_LOCAL_PAGES
+    .filter((page) => page.city === content.locationKey && page.trade !== content.trade)
+    .map((page) => ({
+      href: localPagePath(page.trade, page.city),
+      label: `Find ${LOCAL_TRADES[page.trade].footerLabel.toLowerCase()} in ${content.city}`,
+    }));
+  const specialists = publishedCitySpecialists.length > 0
+    ? publishedCitySpecialists
+    : content.specialists;
 
   return (
     <>
@@ -327,7 +341,7 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
               <h2 id="specialist-title">Other {content.city} trades that may fit the job</h2>
               <p className="specialist-intro">If the work falls outside this trade, use the most relevant specialist page instead. These {content.city} guides follow the same job-posting flow.</p>
               <div className="specialist-links">
-                {content.specialists.map((specialist) => (
+                {specialists.map((specialist) => (
                   <a className="specialist-link" href={specialist.href} key={specialist.href}><span>{specialist.label}</span><span aria-hidden="true">→</span></a>
                 ))}
               </div>
