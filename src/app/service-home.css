@@ -1,3 +1,9 @@
+.hero h1{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .service-heading-card{
   max-width:980px;
   margin:0 auto 26px;
@@ -28,6 +34,12 @@
   margin:0 auto;
 }
 
+.service-heading-card .intro h2{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .cards.service-cards{
   grid-template-columns:repeat(2,minmax(0,1fr));
   max-width:980px;
@@ -43,6 +55,10 @@
 }
 
 @media (max-width:700px){
+  .hero h1{
+    text-align:center;
+  }
+
   .service-heading-card{
     margin-bottom:20px;
     padding:22px 16px;
@@ -52,6 +68,7 @@
   .service-heading-card .intro h2{
     font-size:clamp(36px,11vw,48px);
     line-height:1.02;
+    text-align:center;
   }
 
   .cards.service-cards{
