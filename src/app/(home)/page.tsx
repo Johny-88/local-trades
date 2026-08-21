@@ -4,11 +4,11 @@ import { JsonLd } from "../../components/JsonLd";
 import { createPageMetadata } from "../../lib/seo";
 import { homePageStructuredData } from "../../lib/schema";
 
-const title = "Find Local Tradespeople Near You | Local Trades";
+const title = "Find Local Home & Property Specialists | Local Trades";
 const description =
-  "Describe your home job once. Relevant local tradespeople can review it, and up to 3 interested trades can get in touch. Compare their profiles, quotes and verified customer reviews before you hire.";
+  "Find cleaners, removal companies, locksmiths, heating engineers, tilers, pest controllers and other local specialists. Post your job once and compare up to 3 responses.";
 const socialDescription =
-  "Post your job once. Up to 3 interested local trades can get in touch, then you can compare their profiles, verified reviews and quotes before choosing who to hire.";
+  "Choose the service you need, describe the job once and hear from up to 3 interested local professionals before deciding who to hire.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
