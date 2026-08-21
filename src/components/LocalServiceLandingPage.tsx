@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { LocalServicePageContent } from "../lib/localServiceContent";
 import { serviceCategories } from "../lib/serviceCategoryContent";
+import { SERVICE_COST_SOURCES } from "../lib/serviceCostSources";
 import {
   PUBLISHED_LOCAL_SERVICE_PAGES,
   localServicePagePath,
@@ -49,6 +50,7 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
       (page) => page.city === content.locationSlug && page.service === service.slug,
     ),
   );
+  const costSources = SERVICE_COST_SOURCES[content.serviceSlug];
 
   return (
     <>
@@ -142,7 +144,13 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
                   ))}
                 </ul>
                 <p style={{ marginTop: 22, fontSize: ".84rem" }}>
-                  Cost sources: <a href="https://www.myjobquote.co.uk/costs/removals-cost">MyJobQuote 2026 removal cost guide</a> and <a href="https://www.checkatrade.com/blog/cost-guides/house-removal-costs/">Checkatrade 2026 removal cost guide</a>.
+                  Cost sources:{" "}
+                  {costSources.map((source, index) => (
+                    <span key={source.url}>
+                      {index > 0 ? " · " : ""}
+                      <a href={source.url}>{source.label}</a>
+                    </span>
+                  ))}
                 </p>
               </div>
             </div>
