@@ -63,11 +63,19 @@ export const PLANNED_LOCAL_PAGES: ReadonlyArray<{
 }> = ALL_TRADES.flatMap((trade) => ALL_CITIES.map((city) => ({ trade, city })));
 
 // Keep this list limited to routes that physically exist and are ready to be indexed.
-// Add each Local Trades city page here only when its page file and unique content are published.
 export const PUBLISHED_LOCAL_PAGES: ReadonlyArray<{
   trade: LocalTradeKey;
   city: LocalCityKey;
-}> = [];
+}> = [
+  { trade: "handyman", city: "birmingham" },
+  { trade: "plumber", city: "birmingham" },
+  { trade: "electrician", city: "birmingham" },
+  { trade: "roofer", city: "birmingham" },
+  { trade: "painter-decorator", city: "birmingham" },
+  { trade: "flooring-fitter", city: "birmingham" },
+  { trade: "builder", city: "birmingham" },
+  { trade: "gardener", city: "birmingham" },
+];
 
 export const localPages: LocalPage[] = PLANNED_LOCAL_PAGES.map(({ trade, city }) => {
   const tradeInfo = LOCAL_TRADES[trade];
@@ -78,8 +86,8 @@ export const localPages: LocalPage[] = PLANNED_LOCAL_PAGES.map(({ trade, city })
     locationSlug: city,
     locationName: location.name,
     title: `${tradeInfo.footerLabel} in ${location.name} | Local Trades`,
-    description: `Find local ${tradeInfo.footerLabel.toLowerCase()} in ${location.name}. Describe the job once, compare up to 3 local quotes and use verified customer feedback before you choose.`,
-    intro: `Need a local ${tradeInfo.singular.toLowerCase()} in ${location.name}? Tell us what needs doing once and compare local quote options before you decide who to hire.`,
+    description: `Find local ${tradeInfo.footerLabel.toLowerCase()} in ${location.name}. Describe the job once and interested local tradespeople can get in touch, so you can compare profiles, verified reviews and quotes before you choose.`,
+    intro: `Need a local ${tradeInfo.singular.toLowerCase()} in ${location.name}? Tell us what needs doing once and compare the local tradespeople who respond before you decide who to hire.`,
   };
 });
 
