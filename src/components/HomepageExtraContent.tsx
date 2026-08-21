@@ -1,4 +1,11 @@
 import styles from "./HomepageExtraContent.module.css";
+import {
+  FEATURED_HOME_LOCATIONS,
+  LOCAL_LOCATIONS,
+  LOCAL_TRADES,
+  PUBLISHED_LOCAL_PAGES,
+  localPagePath,
+} from "../lib/localPages";
 import { tradeCategories } from "../lib/tradeCategoryContent";
 
 export function HomepageExtraContent() {
@@ -49,6 +56,37 @@ export function HomepageExtraContent() {
                 <small>{trade.description}</small>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="seo-section" aria-labelledby="popular-location-guides">
+        <div className="wrap">
+          <div className="guide-head">
+            <span className="smallcap">Explore by location</span>
+            <h2 id="popular-location-guides">Popular local trade guides</h2>
+            <p>Choose a location, then open the specialist guide that best matches the work you need done.</p>
+          </div>
+
+          <div className={styles.locations}>
+            {FEATURED_HOME_LOCATIONS.map((city) => {
+              const location = LOCAL_LOCATIONS[city];
+              const cityPages = PUBLISHED_LOCAL_PAGES.filter((page) => page.city === city);
+
+              return (
+                <article className={styles.locationCard} key={city}>
+                  <h3>{location.name}</h3>
+                  <p>{location.region}</p>
+                  <div className={styles.locationLinks} aria-label={`${location.name} trade guides`}>
+                    {cityPages.map((page) => (
+                      <a href={localPagePath(page.trade, page.city)} key={`${page.trade}-${page.city}`}>
+                        {LOCAL_TRADES[page.trade].footerLabel}
+                      </a>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
