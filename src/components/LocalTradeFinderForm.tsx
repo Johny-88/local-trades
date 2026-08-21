@@ -31,12 +31,13 @@ function LocalQuoteCta({
   tradeName,
 }: LocalCtaProps) {
   const [open, setOpen] = useState(false);
+  const actionLabel = buttonLabel === "Start your job request" ? "Post your job now" : buttonLabel;
 
   return (
     <>
       <aside className="find-card local-quote-card" id={containerId} aria-label="Post your job">
         <button className="primary-button" type="button" onClick={() => setOpen(true)}>
-          {buttonLabel}
+          {actionLabel}
           <svg
             width="19"
             height="19"
@@ -64,6 +65,9 @@ function LocalQuoteCta({
             min-height: 60px;
             margin: 0;
             font-size: 1.02rem;
+          }
+          .local-trade-page .hero-points {
+            display: none !important;
           }
           @media (max-width: 700px) {
             .local-trade-page .hero-grid {
