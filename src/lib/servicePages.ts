@@ -15,7 +15,9 @@ export const PUBLISHED_SERVICE_PAGES: readonly ServiceSlug[] = [];
  * Add a location page here only after the route and its researched local content are complete.
  * `city` must be the URL slug used by the page, for example `croydon`.
  */
-export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[] = [];
+export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[] = [
+  { service: "removal-companies", city: "birmingham" },
+];
 
 export function servicePagePath(service: ServiceSlug) {
   return `/${service}/`;
