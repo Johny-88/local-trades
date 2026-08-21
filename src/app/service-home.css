@@ -344,6 +344,54 @@ main#top .smallcap{
   grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
+/* Desktop homepage: 15 service cards in a compact 3 x 5 grid. */
+@media (min-width:701px){
+  .services .cards.service-cards{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    max-width:1180px;
+  }
+
+  .services .cards.service-cards .card{
+    min-width:0;
+    text-align:center;
+  }
+
+  .services .cards.service-cards .service-other{
+    grid-column:auto;
+  }
+
+  .services .cards.service-cards .service-other .card-icon{
+    height:170px;
+  }
+
+  .services .cards.service-cards .card h3{
+    min-height:auto;
+    width:100%;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    white-space:nowrap;
+    font-size:20px;
+    line-height:1.1;
+    padding:0 18px;
+  }
+
+  .services .cards.service-cards .card h3 span{
+    position:absolute;
+    right:2px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .services .cards.service-cards .card p{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
 @media (max-width:900px){
   .site-footer .footer-grid-home,
   .site-footer .footer-grid-simple{
