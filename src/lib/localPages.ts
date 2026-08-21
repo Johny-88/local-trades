@@ -11,6 +11,9 @@ export const LOCAL_LOCATIONS = {
   "sutton-coldfield": { name: "Sutton Coldfield", region: "West Midlands", postcodeExample: "B73 6DA" },
   solihull: { name: "Solihull", region: "West Midlands", postcodeExample: "B91 3QB" },
   croydon: { name: "Croydon", region: "Greater London", postcodeExample: "CR0 1EA" },
+  reading: { name: "Reading", region: "Berkshire", postcodeExample: "RG1 1LZ" },
+  "milton-keynes": { name: "Milton Keynes", region: "Buckinghamshire", postcodeExample: "MK9 3EJ" },
+  southampton: { name: "Southampton", region: "Hampshire", postcodeExample: "SO14 7LY" },
   bromley: { name: "Bromley", region: "Greater London", postcodeExample: "BR1 1LX" },
   stockport: { name: "Stockport", region: "Greater Manchester", postcodeExample: "SK1 3XE" },
   bolton: { name: "Bolton", region: "Greater Manchester", postcodeExample: "BL1 1RU" },
@@ -62,6 +65,15 @@ export const PLANNED_LOCAL_PAGES: ReadonlyArray<{
   city: LocalCityKey;
 }> = ALL_TRADES.flatMap((trade) => ALL_CITIES.map((city) => ({ trade, city })));
 
+export const FEATURED_HOME_LOCATIONS: ReadonlyArray<LocalCityKey> = [
+  "birmingham",
+  "croydon",
+  "reading",
+  "milton-keynes",
+  "southampton",
+  "bromley",
+];
+
 // Keep this list limited to routes that physically exist and are ready to be indexed.
 export const PUBLISHED_LOCAL_PAGES: ReadonlyArray<{
   trade: LocalTradeKey;
@@ -75,6 +87,46 @@ export const PUBLISHED_LOCAL_PAGES: ReadonlyArray<{
   { trade: "flooring-fitter", city: "birmingham" },
   { trade: "builder", city: "birmingham" },
   { trade: "gardener", city: "birmingham" },
+  { trade: "handyman", city: "croydon" },
+  { trade: "plumber", city: "croydon" },
+  { trade: "electrician", city: "croydon" },
+  { trade: "roofer", city: "croydon" },
+  { trade: "painter-decorator", city: "croydon" },
+  { trade: "flooring-fitter", city: "croydon" },
+  { trade: "builder", city: "croydon" },
+  { trade: "gardener", city: "croydon" },
+  { trade: "handyman", city: "reading" },
+  { trade: "plumber", city: "reading" },
+  { trade: "electrician", city: "reading" },
+  { trade: "roofer", city: "reading" },
+  { trade: "painter-decorator", city: "reading" },
+  { trade: "flooring-fitter", city: "reading" },
+  { trade: "builder", city: "reading" },
+  { trade: "gardener", city: "reading" },
+  { trade: "handyman", city: "milton-keynes" },
+  { trade: "plumber", city: "milton-keynes" },
+  { trade: "electrician", city: "milton-keynes" },
+  { trade: "roofer", city: "milton-keynes" },
+  { trade: "painter-decorator", city: "milton-keynes" },
+  { trade: "flooring-fitter", city: "milton-keynes" },
+  { trade: "builder", city: "milton-keynes" },
+  { trade: "gardener", city: "milton-keynes" },
+  { trade: "handyman", city: "southampton" },
+  { trade: "plumber", city: "southampton" },
+  { trade: "electrician", city: "southampton" },
+  { trade: "roofer", city: "southampton" },
+  { trade: "painter-decorator", city: "southampton" },
+  { trade: "flooring-fitter", city: "southampton" },
+  { trade: "builder", city: "southampton" },
+  { trade: "gardener", city: "southampton" },
+  { trade: "handyman", city: "bromley" },
+  { trade: "plumber", city: "bromley" },
+  { trade: "electrician", city: "bromley" },
+  { trade: "roofer", city: "bromley" },
+  { trade: "painter-decorator", city: "bromley" },
+  { trade: "flooring-fitter", city: "bromley" },
+  { trade: "builder", city: "bromley" },
+  { trade: "gardener", city: "bromley" },
 ];
 
 export const localPages: LocalPage[] = PLANNED_LOCAL_PAGES.map(({ trade, city }) => {
