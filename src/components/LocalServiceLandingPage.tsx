@@ -1,5 +1,10 @@
 import type { ReactNode } from "react";
 import type { LocalServicePageContent } from "../lib/localServiceContent";
+import { serviceCategories } from "../lib/serviceCategoryContent";
+import {
+  PUBLISHED_LOCAL_SERVICE_PAGES,
+  localServicePagePath,
+} from "../lib/servicePages";
 import type { BreadcrumbItem } from "../lib/schema";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
@@ -39,6 +44,12 @@ function TrustItem({ children, paths }: { children: ReactNode; paths: readonly s
 }
 
 export function LocalServiceLandingPage({ content, breadcrumbItems, structuredData }: LocalServiceLandingPageProps) {
+  const locationServices = serviceCategories.filter((service) =>
+    PUBLISHED_LOCAL_SERVICE_PAGES.some(
+      (page) => page.city === content.locationSlug && page.service === service.slug,
+    ),
+  );
+
   return (
     <>
       <JsonLd data={structuredData} />
@@ -47,15 +58,15 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
         <main id="top">
           <section className="hero" aria-labelledby="hero-title">
             <div className="container hero-grid">
-              <div>
-                <p className="eyebrow">{content.hero.eyebrow}</p>
-                <h1 id="hero-title">{content.hero.title}</h1>
-                <p className="hero-copy">{content.hero.copy}</p>
-                <ul className="hero-points" aria-label={`${content.servicePlural} service highlights`}>
-                  {content.hero.points.map((point) => (
-                    <li key={point}><span className="check" aria-hidden="true">✓</span>{point}</li>
-                  ))}
-                </ul>
+              <div style={{ textAlign: "center" }}>
+                <p
+                  className="eyebrow"
+                  style={{ display: "flex", width: "fit-content", margin: "0 auto 18px" }}
+                >
+                  {content.hero.eyebrow}
+                </p>
+                <h1 id="hero-title" style={{ marginInline: "auto" }}>{content.hero.title}</h1>
+                <p className="hero-copy" style={{ margin: "22px auto 0" }}>{content.hero.copy}</p>
               </div>
 
               <LocalServiceLeadCard
@@ -79,16 +90,16 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
           <section className="answer-strip" aria-labelledby="near-me-answer">
             <div className="container answer-box">
               <div className="answer-icon"><LineIcon paths={["M18 18l3 3", "M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14"]} /></div>
-              <div>
+              <div style={{ textAlign: "center" }}>
                 <h2 id="near-me-answer">{content.answer.title}</h2>
-                <p>{content.answer.copy}</p>
+                <p style={{ margin: "8px auto 0" }}>{content.answer.copy}</p>
               </div>
             </div>
           </section>
 
           <section className="section" id="services" aria-labelledby="jobs-title">
             <div className="container">
-              <div className="section-head">
+              <div className="section-head center">
                 <p className="eyebrow">Common {content.serviceName.toLowerCase()} services</p>
                 <h2 id="jobs-title">What can {content.servicePlural.toLowerCase()} in {content.locationName} help with?</h2>
                 <p>Choose a professional whose experience matches the scale and practical requirements of your job.</p>
@@ -139,7 +150,7 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
 
           <section className="section" id={`${content.locationSlug}-context`} aria-labelledby="local-context-title">
             <div className="container">
-              <div className="section-head">
+              <div className="section-head center">
                 <p className="eyebrow">{content.localContext.eyebrow}</p>
                 <h2 id="local-context-title">{content.localContext.title}</h2>
                 <p>{content.localContext.intro}</p>
@@ -159,11 +170,11 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
 
           <section className="section section-soft" id="areas" aria-labelledby="areas-title">
             <div className="container local-grid">
-              <div>
+              <div style={{ textAlign: "center" }}>
                 <p className="eyebrow">Local to {content.locationName}</p>
                 <h2 id="areas-title">{content.areas.title}</h2>
                 <p className="local-muted">{content.areas.intro}</p>
-                <div className="area-cloud" aria-label={`${content.locationName} areas`}>
+                <div className="area-cloud" style={{ justifyContent: "center" }} aria-label={`${content.locationName} areas`}>
                   {content.areas.items.map((area) => <span className="area-pill" key={area}>{area}</span>)}
                 </div>
               </div>
@@ -196,7 +207,7 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
 
           <section className="section section-soft" aria-labelledby="choose-title">
             <div className="container choice-grid">
-              <div>
+              <div style={{ textAlign: "center" }}>
                 <p className="eyebrow">Before you hire</p>
                 <h2 id="choose-title" className="choice-title">{content.choose.title}</h2>
                 <p className="local-muted">{content.choose.intro}</p>
@@ -246,6 +257,42 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
                   compact
                 />
               </div>
+            </div>
+          </section>
+
+          <section className="section section-soft" aria-labelledby="location-services-title">
+            <div className="container">
+              <div className="section-head center">
+                <p className="eyebrow">More local specialists</p>
+                <h2 id="location-services-title">Explore services in {content.locationName}</h2>
+                <p>Browse Local Trades service pages available for {content.locationName}.</p>
+              </div>
+              <nav
+                className="area-cloud"
+                style={{ justifyContent: "center" }}
+                aria-label={`Local Trades services in ${content.locationName}`}
+              >
+                {locationServices.map((service) => {
+                  const href = localServicePagePath(service.slug, content.locationSlug);
+                  const current = service.slug === content.serviceSlug;
+                  return (
+                    <a
+                      className="area-pill"
+                      href={href}
+                      key={service.slug}
+                      aria-current={current ? "page" : undefined}
+                      style={{
+                        textDecoration: "none",
+                        background: current ? "#294c3f" : undefined,
+                        color: current ? "#fff" : undefined,
+                        borderColor: current ? "#294c3f" : undefined,
+                      }}
+                    >
+                      {service.plural} in {content.locationName}
+                    </a>
+                  );
+                })}
+              </nav>
             </div>
           </section>
         </main>
