@@ -1,7 +1,5 @@
 import { HomepageExtraContent } from "../components/HomepageExtraContent";
 import { ServiceFinderForm } from "../components/ServiceFinderForm";
-import { serviceCategories } from "../lib/serviceCategoryContent";
-import { servicePagePath } from "../lib/servicePages";
 
 export default function HomePageBase() {
   return (
@@ -112,24 +110,6 @@ export default function HomePageBase() {
               <h3>Check verified reviews and choose</h3>
               <p>See their profiles, 100% genuine verified reviews and quotes, then choose who you want to hire. There is no obligation to proceed.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="homepage-directory" aria-labelledby="directory-title">
-        <div className="wrap">
-          <div className="directory-head">
-            <span className="smallcap">Start with the job</span>
-            <h2 id="directory-title">Choose the right specialist.</h2>
-            <p>Not sure which service is the best fit? Browse all of the specialist categories available on Local Trades.</p>
-          </div>
-          <div className="directory-grid">
-            {serviceCategories.map((service) => (
-              <a className="directory-card" href={servicePagePath(service.slug)} key={service.slug}>
-                <span>{service.plural}</span>
-                <i aria-hidden="true">→</i>
-              </a>
-            ))}
           </div>
         </div>
       </section>
