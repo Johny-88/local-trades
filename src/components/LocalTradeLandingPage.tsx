@@ -2,6 +2,8 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
 import { LocalTradeFinderForm } from "./LocalTradeFinderForm";
 import type { TradeSlug } from "../lib/affiliateLinks";
+import { getLocalAreaProfile } from "../lib/localAreaContent";
+import type { LocalCityKey } from "../lib/localPages";
 import { createLocalTradePageStructuredData, type BreadcrumbItem } from "../lib/schema";
 
 export type LocalCityPageContent = {
@@ -12,12 +14,18 @@ export type LocalCityPageContent = {
   article: "a" | "an";
   city: string;
   region: string;
+  locationKey: LocalCityKey;
   canonicalPath: string;
   title: string;
   webPageDescription: string;
   serviceType: string;
   heroCopy: string;
   workLabel: string;
+  localContextHeading: string;
+  localContextParagraphs: ReadonlyArray<string>;
+  areaIntro: string;
+  areaNoteHeading: string;
+  areaNote: string;
   jobsHeading: string;
   jobsIntro: string;
   jobs: ReadonlyArray<{ title: string; text: string }>;
@@ -33,17 +41,6 @@ export type LocalCityPageContent = {
   faqIntro: string;
   faqs: ReadonlyArray<{ question: string; answer: string }>;
 };
-
-const BirminghamAreas = [
-  "Edgbaston",
-  "Harborne",
-  "Selly Oak",
-  "Erdington",
-  "Hall Green",
-  "Kings Heath",
-  "Yardley",
-  "Sutton Coldfield",
-] as const;
 
 export function LocalTradeLandingPage({ content }: { content: LocalCityPageContent }) {
   const breadcrumbItems: BreadcrumbItem[] = [
@@ -64,6 +61,7 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
   });
 
   const findAnchor = `find-${content.trade === "painter-decorator" ? "decorator" : content.trade}`;
+  const areaProfile = getLocalAreaProfile(content.locationKey);
 
   return (
     <>
@@ -126,6 +124,37 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
             </div>
           </section>
 
+          {areaProfile ? (
+            <section className="section section-soft" id="local-context" aria-labelledby="local-context-title">
+              <div className="container two-col">
+                <div className="content-card">
+                  <p className="eyebrow">{content.city} property context</p>
+                  <h2 id="local-context-title">{content.localContextHeading}</h2>
+                  {content.localContextParagraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                  <p className="source-note">
+                    Housing context: <a href={areaProfile.housingSourceUrl} target="_blank" rel="noreferrer">{areaProfile.housingSourceLabel}</a>.
+                  </p>
+                </div>
+
+                <div className="cost-panel">
+                  <p className="eyebrow">Local housing snapshot</p>
+                  <h2>What {content.city}&apos;s housing mix looks like</h2>
+                  <p>{areaProfile.housingSummary}</p>
+                  <div className="price-row">
+                    {areaProfile.housingFacts.map((fact) => (
+                      <div className="price-card" key={`${fact.value}-${fact.label}`}>
+                        <strong>{fact.value}</strong>
+                        <span>{fact.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          ) : null}
+
           <section className="section" id={`${content.trade}-jobs`} aria-labelledby="jobs-title">
             <div className="container">
               <div className="section-head">
@@ -181,21 +210,22 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
             <div className="container local-grid">
               <div>
                 <p className="eyebrow">Across {content.city}</p>
-                <h2 id="areas-title">Find {content.tradePlural.toLowerCase()} covering your part of the city</h2>
-                <p className="local-muted">
-                  Availability can vary from one Birmingham neighbourhood to another. Add the postcode inside the job form so the request can be shown to relevant tradespeople who actually cover where the work is.
-                </p>
-                <div className="area-cloud" aria-label="Birmingham areas">
-                  {BirminghamAreas.map((area) => <span className="area-pill" key={area}>{area}</span>)}
-                </div>
+                <h2 id="areas-title">Find {content.tradePlural.toLowerCase()} covering your part of {content.city}</h2>
+                <p className="local-muted">{content.areaIntro}</p>
+                {areaProfile ? (
+                  <div className="area-cloud" aria-label={`${content.city} areas`}>
+                    {areaProfile.areas.map((area) => <span className="area-pill" key={area}>{area}</span>)}
+                  </div>
+                ) : null}
               </div>
 
               <div className="content-card">
-                <h2>Why local availability matters</h2>
-                <p>
-                  A useful “{content.tradeName.toLowerCase()} near me” result is about who can realistically take on your actual job. Travel time, workload, access and the size of the work can all affect whether a tradesperson is interested.
-                </p>
-                <div className="local-note"><strong>Coverage depends on the individual trade.</strong> Use the property postcode inside the request form so the job can be matched to the correct part of Birmingham.</div>
+                <h2>{content.areaNoteHeading}</h2>
+                <p>{content.areaNote}</p>
+                <div className="local-note">
+                  <strong>Use the exact job postcode.</strong> Local coverage depends on the individual tradesperson, the work and current availability.
+                  {areaProfile ? <> Area names are based on <a href={areaProfile.areaSourceUrl} target="_blank" rel="noreferrer">{areaProfile.areaSourceLabel}</a>.</> : null}
+                </div>
               </div>
             </div>
           </section>
@@ -212,7 +242,7 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
                 <article className="step">
                   <div className="step-number" aria-hidden="true" />
                   <h3>Describe the job</h3>
-                  <p>Open the form, add the Birmingham postcode and explain the {content.workLabel} clearly enough for a tradesperson to understand the scope.</p>
+                  <p>Open the form, add the {content.city} postcode and explain the {content.workLabel} clearly enough for a tradesperson to understand the scope.</p>
                 </article>
                 <article className="step">
                   <div className="step-number" aria-hidden="true" />
@@ -250,8 +280,8 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
           <section className="section section-soft" aria-labelledby="specialist-title">
             <div className="container specialist-box">
               <p className="eyebrow">Need a different trade?</p>
-              <h2 id="specialist-title">Other Birmingham trades that may fit the job</h2>
-              <p className="specialist-intro">If the work falls outside this trade, use the most relevant specialist page instead. These Birmingham guides follow the same job-posting flow.</p>
+              <h2 id="specialist-title">Other {content.city} trades that may fit the job</h2>
+              <p className="specialist-intro">If the work falls outside this trade, use the most relevant specialist page instead. These {content.city} guides follow the same job-posting flow.</p>
               <div className="specialist-links">
                 {content.specialists.map((specialist) => (
                   <a className="specialist-link" href={specialist.href} key={specialist.href}><span>{specialist.label}</span><span aria-hidden="true">→</span></a>
@@ -264,7 +294,7 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
             <div className="container">
               <div className="section-head center">
                 <p className="eyebrow">Useful answers</p>
-                <h2 id="faq-title">{content.tradeName} Birmingham FAQs</h2>
+                <h2 id="faq-title">{content.tradeName} {content.city} FAQs</h2>
                 <p>{content.faqIntro}</p>
               </div>
 
