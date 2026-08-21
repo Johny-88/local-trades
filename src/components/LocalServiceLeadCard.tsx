@@ -26,7 +26,12 @@ export function LocalServiceLeadCard({
   return (
     <>
       {compact ? (
-        <button className="cta-button" type="button" onClick={() => setOpen(true)}>
+        <button
+          className="cta-button"
+          type="button"
+          style={{ border: 0, cursor: "pointer", font: "inherit" }}
+          onClick={() => setOpen(true)}
+        >
           {buttonLabel}
         </button>
       ) : (
