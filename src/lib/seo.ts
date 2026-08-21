@@ -37,7 +37,6 @@ export function createPageMetadata({
 }: PageMetadataOptions): Metadata {
   const canonical = new URL(path, `${SITE_URL}/`).toString();
   const image = new URL(ogImage ?? getOgImage(path), `${SITE_URL}/`).toString();
-  const compactLogoImage = new URL("/og/logo-square.png", `${SITE_URL}/`).toString();
 
   return {
     title,
@@ -60,12 +59,6 @@ export function createPageMetadata({
           width: 1200,
           height: 630,
           alt: title,
-        },
-        {
-          url: compactLogoImage,
-          width: 512,
-          height: 512,
-          alt: `${SITE_NAME} logo`,
         },
       ],
     },
