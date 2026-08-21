@@ -134,6 +134,227 @@ main#top .smallcap{
   height:135px;
 }
 
+/* Homepage service directory */
+.homepage-directory{
+  padding:84px 0;
+  background:#fff;
+  border-top:1px solid #ece2d8;
+}
+
+.directory-head{
+  max-width:760px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+
+.directory-head h2{
+  margin:10px 0 12px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(38px,4.5vw,52px);
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.05em;
+  color:var(--deep);
+}
+
+.directory-head p{
+  margin:0;
+  color:#6b746e;
+  font-size:16px;
+}
+
+.directory-grid{
+  max-width:980px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.directory-card{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:0 18px;
+  border:1px solid #e5ddd3;
+  border-radius:14px;
+  background:#fbf8f3;
+  color:#425349;
+  text-decoration:none;
+  font-weight:750;
+  transition:border-color .16s ease,color .16s ease,transform .16s ease;
+}
+
+.directory-card:hover{
+  border-color:#d5bca9;
+  color:var(--terr);
+  transform:translateY(-1px);
+}
+
+.directory-card i{
+  color:var(--terr);
+  font-style:normal;
+  font-size:18px;
+}
+
+/* Homepage FAQ: centered heading followed by one dropdown column */
+.faqsec .faqstack{
+  display:block;
+}
+
+.faqintro{
+  max-width:760px;
+  margin:0 auto 28px;
+  text-align:center;
+}
+
+.faqintro h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:46px;
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.05em;
+  margin:10px 0 14px;
+  color:var(--deep);
+}
+
+.faqintro p{
+  margin:0;
+  color:#6d756f;
+}
+
+.faqquestions{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.faqquestions details{
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  padding:0;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+.faqquestions summary{
+  padding:19px 52px 19px 20px;
+  position:relative;
+}
+
+.faqquestions summary:after{
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.faqquestions .answer{
+  padding:0 20px 20px;
+}
+
+/* Footer structure mirrors the GetTradesmen column layout. */
+.site-footer{
+  padding:52px 0 30px;
+  border-top:1px solid #e9ddd0;
+  color:#746e66;
+  font-size:12px;
+  background:var(--bg);
+}
+
+.site-footer .footer-grid{
+  display:grid;
+  gap:48px;
+  align-items:start;
+  padding:0;
+}
+
+.site-footer .footer-grid-home{
+  grid-template-columns:1.35fr 1fr .85fr;
+}
+
+.site-footer .footer-grid-simple{
+  grid-template-columns:1.5fr .8fr;
+}
+
+.site-footer .footer-brand p{
+  max-width:460px;
+  margin:16px 0 0;
+  color:#746e66;
+  line-height:1.6;
+}
+
+.site-footer .footer-logo{
+  text-decoration:none;
+}
+
+.site-footer .footer-col h2{
+  margin:2px 0 16px;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:800;
+  color:var(--deep);
+  letter-spacing:.01em;
+}
+
+.site-footer .footer-links{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:9px;
+}
+
+.site-footer .footer-links li{
+  margin:0;
+  padding:0;
+}
+
+.site-footer .footer-links a{
+  color:#6f766f;
+  text-decoration:none;
+}
+
+.site-footer .footer-links a:hover{
+  color:var(--terr);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.site-footer .footer-bottom{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:30px;
+  align-items:start;
+  margin-top:38px;
+  padding-top:22px;
+  border-top:1px solid #e5ddd3;
+  color:#837b72;
+  line-height:1.55;
+}
+
+.site-footer .affiliate-note{
+  max-width:760px;
+}
+
+/* National category pages */
+.local-trade-page .category-job-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+@media (max-width:900px){
+  .site-footer .footer-grid-home,
+  .site-footer .footer-grid-simple{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .site-footer .footer-grid-home .footer-brand{
+    grid-column:1 / -1;
+  }
+}
+
 @media (max-width:700px){
   .hero h1{
     text-align:center;
@@ -222,5 +443,60 @@ main#top .smallcap{
 
   .cards.service-cards .service-other .card-icon{
     height:105px;
+  }
+
+  .homepage-directory{
+    padding:64px 0;
+  }
+
+  .directory-head{
+    margin-bottom:22px;
+  }
+
+  .directory-head h2,
+  .faqintro h2{
+    font-size:clamp(34px,10vw,46px);
+  }
+
+  .directory-grid{
+    grid-template-columns:1fr;
+    gap:9px;
+  }
+
+  .directory-card{
+    min-height:54px;
+    padding:0 15px;
+  }
+
+  .faqquestions summary{
+    padding:17px 46px 17px 16px;
+    font-size:14px;
+  }
+
+  .faqquestions .answer{
+    padding:0 16px 17px;
+  }
+
+  .site-footer{
+    padding-top:40px;
+  }
+
+  .site-footer .footer-grid-home,
+  .site-footer .footer-grid-simple{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+
+  .site-footer .footer-grid-home .footer-brand{
+    grid-column:auto;
+  }
+
+  .site-footer .footer-bottom{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .local-trade-page .category-job-grid{
+    grid-template-columns:1fr;
   }
 }
