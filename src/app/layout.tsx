@@ -10,19 +10,6 @@ import "./service-home.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-      "max-image-preview": "none",
-      "max-snippet": 0,
-      "max-video-preview": 0,
-    },
-  },
   icons: {
     icon: [{ url: "/assets/favicon.svg", type: "image/svg+xml" }],
   },
