@@ -1,5 +1,7 @@
 import { HomepageExtraContent } from "../components/HomepageExtraContent";
 import { ServiceFinderForm } from "../components/ServiceFinderForm";
+import { serviceCategories } from "../lib/serviceCategoryContent";
+import { servicePagePath } from "../lib/servicePages";
 
 export default function HomePageBase() {
   return (
@@ -114,15 +116,33 @@ export default function HomePageBase() {
         </div>
       </section>
 
+      <section className="homepage-directory" aria-labelledby="directory-title">
+        <div className="wrap">
+          <div className="directory-head">
+            <span className="smallcap">Start with the job</span>
+            <h2 id="directory-title">Choose the right specialist.</h2>
+            <p>Not sure which service is the best fit? Browse all of the specialist categories available on Local Trades.</p>
+          </div>
+          <div className="directory-grid">
+            {serviceCategories.map((service) => (
+              <a className="directory-card" href={servicePagePath(service.slug)} key={service.slug}>
+                <span>{service.plural}</span>
+                <i aria-hidden="true">→</i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="faqsec" id="faq">
-        <div className="wrap faqgrid">
-          <div>
+        <div className="wrap faqstack">
+          <div className="faqintro">
             <span className="smallcap">Questions</span>
             <h2>What homeowners usually want to know.</h2>
             <p>A few clear answers before you send a job request.</p>
           </div>
-          <div>
-            <details open>
+          <div className="faqquestions">
+            <details>
               <summary>Which services can I choose directly?</summary>
               <div className="answer">Local Trades currently gives direct access to removal companies, cleaners, tilers, heating engineers, locksmiths, pest controllers, tree surgeons, architects, plasterers, kitchen fitters, bathroom specialists, drainage specialists, driveway specialists and window specialists.</div>
             </details>
