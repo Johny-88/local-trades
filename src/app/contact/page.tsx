@@ -3,7 +3,7 @@ import { InfoPageShell, InfoSection } from "../../components/InfoPageShell";
 import { JsonLd } from "../../components/JsonLd";
 import { createInfoPageStructuredData, type BreadcrumbItem } from "../../lib/schema";
 import { createPageMetadata } from "../../lib/seo";
-import { CONTACT_EMAIL, OPERATOR_NAME } from "../../lib/site";
+import { CONTACT_EMAIL } from "../../lib/site";
 
 const title = "Contact Local Trades | Help & Enquiries";
 const description = "Contact Local Trades by email for website questions, feedback, privacy enquiries, corrections or partnership questions.";
@@ -34,7 +34,7 @@ export default function ContactPage() {
         summaryTitle="The quickest way to reach us is by email"
         summary={
           <p>
-            Write to <a href={`mailto:${CONTACT_EMAIL}`}><strong>{CONTACT_EMAIL}</strong></a>. Local Trades is operated by <strong>{OPERATOR_NAME}</strong>.
+            Write to <a href={`mailto:${CONTACT_EMAIL}`}><strong>{CONTACT_EMAIL}</strong></a>.
           </p>
         }
       >
@@ -47,7 +47,6 @@ export default function ContactPage() {
           <div className="content-card">
             <h3>Contact email</h3>
             <p><a href={`mailto:${CONTACT_EMAIL}`}><strong>{CONTACT_EMAIL}</strong></a></p>
-            <p><strong>Operator:</strong> {OPERATOR_NAME}</p>
             <p>
               Please include enough detail for us to understand the issue, such as the page you were viewing, the type of question you have and any correction you think is needed. Do not send passwords, payment-card details or unnecessary sensitive information.
             </p>
