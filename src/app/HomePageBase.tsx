@@ -10,7 +10,7 @@ export default function HomePageBase() {
             <span className="smallcap">Local specialists, made simpler</span>
             <h1>Find the right local specialist for the job.</h1>
             <p>
-              From cleaning and removals to heating, locks, tiling, pest control and specialist property work, choose the service you need and describe the job once. Up to three interested local professionals can get in touch, so you can compare your options before deciding.
+              Choose the service you need and post your job once. We connect your request with suitable local professionals in your area, and those who are interested can respond. You can then check their profiles, genuine verified reviews and quotes before deciding who, if anyone, you want to hire.
             </p>
             <div className="actions">
               <a className="btn" href="#services">Choose a service →</a>
@@ -18,7 +18,7 @@ export default function HomePageBase() {
             </div>
             <div className="hero-trust">
               <span><b>Free</b> for homeowners</span>
-              <span><b>Up to 3</b> local responses</span>
+              <span><b>100% verified</b> reviews</span>
               <span><b>No obligation</b> to hire</span>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function HomePageBase() {
           <ServiceFinderForm />
 
           <div className="reassure">
-            <span><b>✓ 14 direct service categories</b></span>
+            <span><b>✓ 100% genuine, verified reviews</b></span>
             <span><b>✓ Other</b> opens the full service finder</span>
             <span><b>✓ One job request</b> to get started</span>
           </div>
@@ -49,15 +49,15 @@ export default function HomePageBase() {
         <div className="wrap story-grid">
           <div>
             <span className="smallcap">A simpler first step</span>
-            <h2>Describe the job once. Let interested local specialists come to you.</h2>
+            <h2>Post the job once. Let interested local specialists come to you.</h2>
             <p className="lead">
-              You do not need to search through endless listings or repeat the same details again and again. Pick the service that matches the job, explain what needs doing, and relevant local professionals can review the request. Up to three who are interested can then get in touch.
+              Tell us what you need and where the job is. Your request is matched with suitable local professionals, and those who want the work can express interest and get in touch. You stay in control throughout — there is no obligation to hire anyone who responds.
             </p>
             <div className="verified-box">
-              <span className="verified-badge">✓ Compare before you decide</span>
-              <h3>Profiles, customer feedback and quotes in one journey.</h3>
+              <span className="verified-badge">✓ 100% genuine, verified reviews</span>
+              <h3>See who is interested before you choose.</h3>
               <p>
-                <strong>When an interested professional responds, you can review the information available on their profile before choosing what to do next.</strong> Ask questions, compare the proposed work and price, and only proceed if you are comfortable.
+                <strong>Once a professional expresses interest, you can check their profile and verified customer reviews before making a decision.</strong> Compare experience, feedback and quotes, ask any questions you need, and choose the person you feel most comfortable hiring.
               </p>
             </div>
           </div>
@@ -66,22 +66,22 @@ export default function HomePageBase() {
             <div className="note">
               <i>1</i>
               <div>
-                <b>Choose the right service</b>
-                <span>Start with one of the fourteen specialist categories, or use Other if your job sits outside them.</span>
+                <b>Post your job</b>
+                <span>Choose the right service, add your postcode and describe what you need done.</span>
               </div>
             </div>
             <div className="note review-note">
               <i>2</i>
               <div>
-                <b>Describe what needs doing</b>
-                <span>Add the job details and location so suitable local professionals can understand the request.</span>
+                <b>Hear from interested local professionals</b>
+                <span>Suitable professionals in your area can review the job and express interest in doing the work.</span>
               </div>
             </div>
             <div className="note">
               <i>3</i>
               <div>
-                <b>Compare your options</b>
-                <span>Up to three interested professionals can respond. Compare the information they provide before deciding whether to hire.</span>
+                <b>Check reviews, compare and choose</b>
+                <span>Review their profiles, genuine verified feedback and quotes, then decide who you want to hire.</span>
               </div>
             </div>
           </div>
@@ -97,18 +97,18 @@ export default function HomePageBase() {
           <div className="how-grid">
             <div className="how-card">
               <small>ONE</small>
-              <h3>Pick the service</h3>
-              <p>Choose the category that best matches the work you need done.</p>
+              <h3>Post your job</h3>
+              <p>Choose the service, enter your postcode and tell us clearly what you need done.</p>
             </div>
             <div className="how-card">
               <small>TWO</small>
-              <h3>Tell us about the job</h3>
-              <p>Add your postcode and the practical details a local specialist needs to understand the work.</p>
+              <h3>Connect with trusted local professionals</h3>
+              <p>Your job can be shown to suitable professionals in your area. Those who are interested can respond and get in touch.</p>
             </div>
             <div className="how-card">
               <small>THREE</small>
-              <h3>Hear from interested professionals</h3>
-              <p>Up to three can get in touch. Compare profiles, feedback and quotes before choosing what happens next.</p>
+              <h3>Check verified reviews and choose</h3>
+              <p>See their profiles, 100% genuine verified reviews and quotes, then choose who you want to hire. There is no obligation to proceed.</p>
             </div>
           </div>
         </div>
@@ -131,6 +131,14 @@ export default function HomePageBase() {
               <div className="answer">Choose Other. It opens the full service finder so you can select the type of work that best matches your job.</div>
             </details>
             <details>
+              <summary>What happens after I post my job?</summary>
+              <div className="answer">Your request can be matched with suitable local professionals. Those who are interested can respond, after which you can review their profile, verified customer feedback and quote before deciding whether you want to hire.</div>
+            </details>
+            <details>
+              <summary>Are the reviews genuine?</summary>
+              <div className="answer">Yes. The customer reviews shown for responding professionals are genuine and verified, so you can use real feedback alongside their profile and quote when making your decision.</div>
+            </details>
+            <details>
               <summary>Is it free to request quotes?</summary>
               <div className="answer">Yes. It is free for homeowners to submit a job request and receive responses.</div>
             </details>
@@ -140,7 +148,7 @@ export default function HomePageBase() {
             </details>
             <details>
               <summary>Do I have to hire someone who responds?</summary>
-              <div className="answer">No. There is no obligation to hire. Review the available information, discuss the job and decide only if one of the options feels right.</div>
+              <div className="answer">No. There is no obligation to hire. Check their profile, verified reviews and quote, discuss the job, and decide only if one of the options feels right.</div>
             </details>
           </div>
         </div>
