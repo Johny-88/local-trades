@@ -27,10 +27,12 @@ export default function HomePageBase() {
 
       <section className="services" id="services">
         <div className="wrap">
-          <div className="intro">
-            <span className="smallcap">Start with the job</span>
-            <h2>What kind of specialist do you need?</h2>
-            <p>Choose the closest match below. The correct service category is already selected when the quote form opens.</p>
+          <div className="service-heading-card">
+            <div className="intro">
+              <span className="smallcap">Start with the job</span>
+              <h2>What kind of specialist do you need?</h2>
+              <p>Choose the closest match below. The correct service category is already selected when the quote form opens.</p>
+            </div>
           </div>
 
           <ServiceFinderForm />
