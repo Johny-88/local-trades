@@ -19,6 +19,10 @@ export const LOCAL_LOCATIONS = {
   ealing: { name: "Ealing", region: "Greater London", postcodeExample: "W5 2HL" },
   oxford: { name: "Oxford", region: "Oxfordshire", postcodeExample: "OX1 1BX" },
   northampton: { name: "Northampton", region: "Northamptonshire", postcodeExample: "NN1 1ED" },
+  leicester: { name: "Leicester", region: "Leicestershire", postcodeExample: "LE1 5YA" },
+  nottingham: { name: "Nottingham", region: "Nottinghamshire", postcodeExample: "NG1 2DT" },
+  derby: { name: "Derby", region: "Derbyshire", postcodeExample: "DE1 3AF" },
+  harrow: { name: "Harrow", region: "Greater London", postcodeExample: "HA1 2XY" },
   stockport: { name: "Stockport", region: "Greater Manchester", postcodeExample: "SK1 3XE" },
   bolton: { name: "Bolton", region: "Greater Manchester", postcodeExample: "BL1 1RU" },
   walsall: { name: "Walsall", region: "West Midlands", postcodeExample: "WS1 1TP" },
@@ -82,6 +86,11 @@ export const PUBLISHED_LOCAL_CITIES: ReadonlyArray<LocalCityKey> = [
   "enfield",
   "oxford",
   "northampton",
+  "leicester",
+  "nottingham",
+  "derby",
+  "romford",
+  "harrow",
 ];
 
 // Homepage location blocks intentionally mirror every fully published city.
