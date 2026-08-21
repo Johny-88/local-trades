@@ -3,7 +3,7 @@ import { InfoPageShell, InfoSection } from "../../components/InfoPageShell";
 import { JsonLd } from "../../components/JsonLd";
 import { createInfoPageStructuredData, type BreadcrumbItem } from "../../lib/schema";
 import { createPageMetadata } from "../../lib/seo";
-import { CONTACT_EMAIL, OPERATOR_NAME } from "../../lib/site";
+import { CONTACT_EMAIL } from "../../lib/site";
 
 const title = "Terms & Conditions | Local Trades";
 const description = "Read the Local Trades Terms & Conditions, including our independent referral role, third-party quote services, professionals, prices and user responsibilities.";
@@ -49,7 +49,7 @@ export default function TermsPage() {
               Local Trades is intended primarily for people in the United Kingdom who are researching home and property services or looking for a route to request quotes through a third-party partner. If you do not agree with these terms, you should not use the website.
             </p>
             <p>
-              Local Trades is operated by <strong>{OPERATOR_NAME}</strong>. We may update these terms when the website, commercial arrangements or applicable requirements change. The version published on this page applies to your use of the site at that time.
+              We may update these terms when the website, commercial arrangements or applicable requirements change. The version published on this page applies to your use of the site at that time.
             </p>
           </div>
         </InfoSection>
