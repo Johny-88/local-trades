@@ -1,5 +1,6 @@
 import { getBirminghamServiceContent } from "./birminghamServiceContent";
 import { getLocalServiceContent as getPilotLocalServiceContent } from "./localServiceContent";
+import { getLeedsServiceContent } from "./leedsServiceContent";
 import { getLondonServiceContent } from "./londonServiceContent";
 import { getManchesterServiceContent } from "./manchesterServiceContent";
 
@@ -8,6 +9,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getPilotLocalServiceContent(service, city) ??
     getBirminghamServiceContent(service, city) ??
     getManchesterServiceContent(service, city) ??
-    getLondonServiceContent(service, city)
+    getLondonServiceContent(service, city) ??
+    getLeedsServiceContent(service, city)
   );
 }

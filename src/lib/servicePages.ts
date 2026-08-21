@@ -73,6 +73,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "london" },
   { service: "driveway-specialists", city: "london" },
   { service: "window-specialists", city: "london" },
+  { service: "removal-companies", city: "leeds" },
+  { service: "cleaners", city: "leeds" },
+  { service: "tilers", city: "leeds" },
+  { service: "heating-engineers", city: "leeds" },
+  { service: "locksmiths", city: "leeds" },
+  { service: "pest-controllers", city: "leeds" },
+  { service: "tree-surgeons", city: "leeds" },
+  { service: "architects", city: "leeds" },
+  { service: "plasterers", city: "leeds" },
+  { service: "kitchen-fitters", city: "leeds" },
+  { service: "bathroom-specialists", city: "leeds" },
+  { service: "drainage-specialists", city: "leeds" },
+  { service: "driveway-specialists", city: "leeds" },
+  { service: "window-specialists", city: "leeds" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
