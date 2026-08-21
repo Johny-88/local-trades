@@ -2,9 +2,14 @@ import {
   getLocalAreaProfile as getLegacyLocalAreaProfile,
   type LocalAreaProfile,
 } from "./localAreaContent";
+import { BRIGHTON_PROFILE } from "./localAreaProfiles/brighton";
 import { BROMLEY_PROFILE } from "./localAreaProfiles/bromley";
 import { CROYDON_PROFILE } from "./localAreaProfiles/croydon";
+import { EALING_PROFILE } from "./localAreaProfiles/ealing";
+import { ENFIELD_PROFILE } from "./localAreaProfiles/enfield";
 import { MILTON_KEYNES_PROFILE } from "./localAreaProfiles/miltonKeynes";
+import { NORTHAMPTON_PROFILE } from "./localAreaProfiles/northampton";
+import { OXFORD_PROFILE } from "./localAreaProfiles/oxford";
 import { READING_PROFILE } from "./localAreaProfiles/reading";
 import { SOUTHAMPTON_PROFILE } from "./localAreaProfiles/southampton";
 import type { LocalCityKey } from "./localPages";
@@ -15,6 +20,11 @@ const SCALABLE_LOCAL_AREA_PROFILES: Partial<Record<LocalCityKey, LocalAreaProfil
   "milton-keynes": MILTON_KEYNES_PROFILE,
   southampton: SOUTHAMPTON_PROFILE,
   bromley: BROMLEY_PROFILE,
+  brighton: BRIGHTON_PROFILE,
+  ealing: EALING_PROFILE,
+  enfield: ENFIELD_PROFILE,
+  oxford: OXFORD_PROFILE,
+  northampton: NORTHAMPTON_PROFILE,
 };
 
 export function getLocalAreaProfile(city: LocalCityKey) {
