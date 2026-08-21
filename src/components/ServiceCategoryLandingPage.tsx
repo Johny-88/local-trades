@@ -5,14 +5,20 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
 import { ServiceCategoryLeadCard } from "./ServiceCategoryLeadCard";
 
+type LocationLink = {
+  name: string;
+  href: string;
+};
+
 type Props = {
   service: ServiceCategory;
   details: ServicePageDetails;
   breadcrumbItems: BreadcrumbItem[];
   structuredData: unknown;
+  locationLinks: LocationLink[];
 };
 
-export function ServiceCategoryLandingPage({ service, details, breadcrumbItems, structuredData }: Props) {
+export function ServiceCategoryLandingPage({ service, details, breadcrumbItems, structuredData, locationLinks }: Props) {
   const pluralLower = service.plural.toLowerCase();
   return (
     <>
@@ -101,6 +107,26 @@ export function ServiceCategoryLandingPage({ service, details, breadcrumbItems, 
               </div>
             </div>
           </section>
+
+          {locationLinks.length > 0 ? (
+            <section className="section" aria-labelledby="category-locations-title">
+              <div className="container">
+                <div className="specialist-box">
+                  <p className="eyebrow">Local guides</p>
+                  <h2 id="category-locations-title">Find {pluralLower} by location</h2>
+                  <p className="specialist-intro">Browse our published local pages for location-specific information and quote options.</p>
+                  <div className="specialist-links">
+                    {locationLinks.map((location) => (
+                      <a className="specialist-link" href={location.href} key={location.href}>
+                        <span>{location.name}</span>
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          ) : null}
 
           <section className="cta-band">
             <div className="container">
