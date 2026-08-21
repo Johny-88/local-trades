@@ -62,6 +62,7 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
 
   const findAnchor = `find-${content.trade === "painter-decorator" ? "decorator" : content.trade}`;
   const areaProfile = getLocalAreaProfile(content.locationKey);
+  const localTradeContent = areaProfile?.tradeContent[content.trade];
 
   return (
     <>
@@ -205,6 +206,49 @@ export function LocalTradeLandingPage({ content }: { content: LocalCityPageConte
               </div>
             </div>
           </section>
+
+          {localTradeContent ? (
+            <section className="section" id="local-trade-context" aria-labelledby="local-trade-context-title">
+              <div className="container two-col">
+                <div className="content-card">
+                  <p className="eyebrow">{localTradeContent.eyebrow}</p>
+                  <h2 id="local-trade-context-title">{localTradeContent.heading}</h2>
+                  <p>{localTradeContent.intro}</p>
+                  <div className="benefit-list">
+                    {localTradeContent.points.map((point) => (
+                      <div className="benefit" key={point.title}>
+                        <div className="benefit-icon" aria-hidden="true">
+                          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                        </div>
+                        <div><h3>{point.title}</h3><p>{point.text}</p></div>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="source-note">
+                    Local research:{" "}
+                    {localTradeContent.sources.map((source, index) => (
+                      <span key={source.url}>
+                        {index > 0 ? " · " : ""}
+                        <a href={source.url} target="_blank" rel="noreferrer">{source.label}</a>
+                      </span>
+                    ))}
+                    .
+                  </p>
+                </div>
+
+                <div className="content-card">
+                  <p className="eyebrow">Before you post the job</p>
+                  <h2>{localTradeContent.checklistHeading}</h2>
+                  <p>{localTradeContent.checklistIntro}</p>
+                  <ul className="bullet-list">
+                    {localTradeContent.checklist.map((item) => (
+                      <li key={item}><span className="tick" aria-hidden="true">✓</span><span>{item}</span></li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+          ) : null}
 
           <section className="section" id="areas" aria-labelledby="areas-title">
             <div className="container local-grid">
