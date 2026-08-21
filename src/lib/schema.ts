@@ -11,7 +11,7 @@ const organization = {
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   description:
-    "Independent UK information and referral website helping homeowners describe home jobs, compare local trade options and continue to a third-party quote service when they want to request quotes.",
+    "Independent UK information and referral website helping homeowners find local home and property specialists, describe a job and continue to a third-party quote service when they want to request quotes.",
   logo: {
     "@type": "ImageObject",
     url: `${SITE_URL}/assets/logo.svg`,
