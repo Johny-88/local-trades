@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { buildQuoteIframeUrl, type TradeSlug } from "../lib/affiliateLinks";
 
 type QuoteModalProps = {
@@ -77,9 +78,9 @@ export function QuoteModal({ open, onClose, tradeSlug, tradeName }: QuoteModalPr
     };
   }, []);
 
-  if (!open) return null;
+  if (!open || typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div
       className="modal open"
       role="presentation"
@@ -117,6 +118,7 @@ export function QuoteModal({ open, onClose, tradeSlug, tradeName }: QuoteModalPr
 
         <div className="quote-footer">Free for homeowners · Up to 3 local quotes · No obligation to hire</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
