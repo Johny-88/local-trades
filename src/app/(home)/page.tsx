@@ -6,9 +6,9 @@ import { homePageStructuredData } from "../../lib/schema";
 
 const title = "Find Local Tradespeople Near You | Local Trades";
 const description =
-  "Describe your home job once, receive up to 3 local quotes and compare verified customer reviews before you decide who to hire.";
+  "Describe your home job once. Relevant local tradespeople can review it, and up to 3 interested trades can get in touch. Compare their profiles, quotes and verified customer reviews before you hire.";
 const socialDescription =
-  "Describe your job once, hear from suitable local tradespeople and compare your options before choosing who to hire.";
+  "Post your job once. Up to 3 interested local trades can get in touch, then you can compare their profiles, verified reviews and quotes before choosing who to hire.";
 
 export const metadata: Metadata = createPageMetadata({
   title,
