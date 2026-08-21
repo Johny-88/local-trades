@@ -45,6 +45,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "birmingham" },
   { service: "driveway-specialists", city: "birmingham" },
   { service: "window-specialists", city: "birmingham" },
+  { service: "removal-companies", city: "manchester" },
+  { service: "cleaners", city: "manchester" },
+  { service: "tilers", city: "manchester" },
+  { service: "heating-engineers", city: "manchester" },
+  { service: "locksmiths", city: "manchester" },
+  { service: "pest-controllers", city: "manchester" },
+  { service: "tree-surgeons", city: "manchester" },
+  { service: "architects", city: "manchester" },
+  { service: "plasterers", city: "manchester" },
+  { service: "kitchen-fitters", city: "manchester" },
+  { service: "bathroom-specialists", city: "manchester" },
+  { service: "drainage-specialists", city: "manchester" },
+  { service: "driveway-specialists", city: "manchester" },
+  { service: "window-specialists", city: "manchester" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {

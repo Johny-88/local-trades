@@ -44,6 +44,13 @@ function TrustItem({ children, paths }: { children: ReactNode; paths: readonly s
   );
 }
 
+function externalSourceUrl(url: string) {
+  return url.replace(
+    "https://www.manchester.gov.uk/parks-leisure-and-the-arts/parks/playgrounds-allotments-and-open-spaces/",
+    "https://www.manchester.gov.uk/parks-leisure-and-the-arts/parks-playgrounds-allotments-and-open-spaces/",
+  );
+}
+
 export function LocalServiceLandingPage({ content, breadcrumbItems, structuredData }: LocalServiceLandingPageProps) {
   const locationServices = serviceCategories.filter((service) =>
     PUBLISHED_LOCAL_SERVICE_PAGES.some(
@@ -169,7 +176,7 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
                     <div className="job-icon"><LineIcon paths={["M12 21s7-4.3 7-10a7 7 0 1 0-14 0c0 5.7 7 10 7 10Z", "M12 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4"]} /></div>
                     <h3>{item.title}</h3>
                     <p>{item.text}</p>
-                    <p style={{ marginTop: 14, fontSize: ".8rem" }}><a href={item.source.url}>Source: {item.source.label}</a></p>
+                    <p style={{ marginTop: 14, fontSize: ".8rem" }}><a href={externalSourceUrl(item.source.url)}>Source: {item.source.label}</a></p>
                   </article>
                 ))}
               </div>
