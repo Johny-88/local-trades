@@ -1,6 +1,6 @@
 # Local Trades engineering rules
 
-Local Trades is a separate UK homeowner referral website. GetTradesmen.uk may be used only as a structural and design-quality reference: keep the strong Next.js App Router architecture, SEO helpers, schema approach, breadcrumbs, responsive layout standards and clean quote-flow patterns, but do not copy GetTradesmen service categories, keyword targets, location-page strategy or category content into Local Trades.
+Local Trades is a separate UK homeowner referral website. GetTradesmen.uk may be used as a structural and SEO-quality reference: preserve the strong Next.js App Router architecture, metadata helpers, schema approach, breadcrumbs, sitemap/robots conventions, responsive layout standards, internal-linking discipline and clean quote-flow patterns, but do not copy GetTradesmen service categories, keyword targets or category content into Local Trades.
 
 ## Locked Local Trades homepage categories
 
@@ -27,6 +27,25 @@ Each direct homepage card must open the MyJobQuote hosted iframe with its exact 
 
 Keep Local Trades branding, colours and visual language independent while preserving the current design system: warm cream background, deep green, terracotta accent, serif display headings and clean white service cards.
 
-The site is intentionally private from search engines at present. Keep the global robots disallow, root noindex/nofollow metadata, site-wide `X-Robots-Tag`, and empty sitemap until the user explicitly asks to make the site indexable. Do not silently restore crawling or indexing while building pages.
+## Locked SEO architecture
 
-Do not reintroduce deleted local trade/location route machinery, old location registries, old category-page generators, old trade-specific OG assets, Cloudflare Workers, HTMLRewriter, wrangler, a static public/index.html homepage, or injected iframe JavaScript/CSS.
+Local Trades is now intended to be crawlable and indexable. Keep the following site-wide unless the user explicitly asks to disable indexing again:
+
+- non-www canonical origin: `https://getlocaltrades.uk`
+- `trailingSlash: true`
+- crawl allowed in `robots.ts` with the sitemap declared
+- no site-wide `X-Robots-Tag` noindex header
+- no root noindex/nofollow metadata
+- `createPageMetadata()` on every indexable page for title, description, self-canonical, index/follow directives, Open Graph and Twitter metadata
+- a dedicated service OG path for each of the fourteen Local Trades categories; location pages inherit the OG image for their parent service
+- JSON-LD using the shared Organization/WebSite graph and the appropriate WebPage/Service/BreadcrumbList graph for category and local pages
+- crawlable breadcrumb links on SEO landing pages
+- clean internal links between relevant category/location pages once they are published
+- every published indexable page must be included in `sitemap.xml`; use `PUBLISHED_SERVICE_PAGES` and `PUBLISHED_LOCAL_SERVICE_PAGES` in `src/lib/servicePages.ts`
+- do not add a route to those published registries before the page exists and its content is ready to index
+
+For future category and location pages, use `servicePagePath()` / `localServicePagePath()`, `createPageMetadata()`, `createServiceCategoryPageStructuredData()` / `createLocalServicePageStructuredData()`, and the published-page registry rather than implementing SEO ad hoc in individual pages.
+
+Future location pages must contain substantial, useful, genuinely researched local information and service-specific local context. Shared layout and shared factual service information are fine, but do not create thin city-name substitutions, doorway pages or fake local filler.
+
+Do not reintroduce the deleted GetTradesmen trade/location routes, old GetTradesmen category registries, old GetTradesmen service keywords, Cloudflare Workers, HTMLRewriter, wrangler, a static public/index.html homepage, or injected iframe JavaScript/CSS.
