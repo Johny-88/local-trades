@@ -46,6 +46,16 @@ Local Trades is now intended to be crawlable and indexable. Keep the following s
 
 For future category and location pages, use `servicePagePath()` / `localServicePagePath()`, `createPageMetadata()`, `createServiceCategoryPageStructuredData()` / `createLocalServicePageStructuredData()`, and the published-page registry rather than implementing SEO ad hoc in individual pages.
 
-Future location pages must contain substantial, useful, genuinely researched local information and service-specific local context. Shared layout and shared factual service information are fine, but do not create thin city-name substitutions, doorway pages or fake local filler.
+## Scalable local-page pattern
+
+The Birmingham Removal Companies page is the first pilot for the new local-service architecture. Until the user approves a different pattern, future service × location pages should use the shared `src/app/[service]/[city]/page.tsx` route and `LocalServiceLandingPage` rather than creating hundreds of hand-coded route components.
+
+Store the service/location content separately from the template. A page must not be added to `PUBLISHED_LOCAL_SERVICE_PAGES` until its content and research are complete.
+
+Every future location page must include meaningful information that is genuinely specific to that location and useful for that particular service. As a minimum, research at least one or two independently localisable topics from authoritative sources — for example local housing/property characteristics, council rules, parking/access, conservation/planning constraints, licensing, protected trees, local infrastructure or another service-relevant factor. Explain why the local fact matters to the homeowner's job; do not paste statistics merely to make the page look unique.
+
+Price guidance must be current, sourced and presented as indicative rather than a guaranteed local quote. Prefer authoritative or established UK sources, state when the guidance was checked, and explain the major factors that can make the actual local price different.
+
+Shared factual service sections, layout and quote flow are fine. Do not create thin city-name substitutions, doorway pages, invented local expertise, fake neighbourhood claims, unsupported local prices or generic filler presented as local research.
 
 Do not reintroduce the deleted GetTradesmen trade/location routes, old GetTradesmen category registries, old GetTradesmen service keywords, Cloudflare Workers, HTMLRewriter, wrangler, a static public/index.html homepage, or injected iframe JavaScript/CSS.
