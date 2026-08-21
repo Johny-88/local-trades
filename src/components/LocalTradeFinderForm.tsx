@@ -37,22 +37,16 @@ function LocalQuoteCta({
   tradeName,
 }: LocalCtaProps) {
   const [open, setOpen] = useState(false);
+  const actionLabel = buttonLabel === "Start your job request" ? "Post your job now" : buttonLabel;
 
   return (
     <>
       <aside className="find-card local-quote-card" id={containerId} aria-labelledby={`${containerId}-title`}>
         <span className="find-card-kicker">Handyman already selected</span>
         <h2 id={`${containerId}-title`}>{title}</h2>
-        <p>{intro}</p>
-
-        <div className="local-quote-points" aria-label="Quote request benefits">
-          <span>✓ Free for homeowners</span>
-          <span>✓ Up to 3 interested local trades can get in touch</span>
-          <span>✓ No obligation to hire</span>
-        </div>
 
         <button className="primary-button" type="button" onClick={() => setOpen(true)}>
-          {buttonLabel}
+          {actionLabel}
           <svg
             width="19"
             height="19"
@@ -69,6 +63,14 @@ function LocalQuoteCta({
         </button>
 
         <p className="microcopy">{microcopy}</p>
+
+        <div className="local-quote-points" aria-label="Quote request benefits">
+          <span>✓ Free for homeowners</span>
+          <span>✓ Up to 3 interested local trades can get in touch</span>
+          <span>✓ No obligation to hire</span>
+        </div>
+
+        <p className="local-quote-explainer">{intro}</p>
       </aside>
 
       <QuoteModal
