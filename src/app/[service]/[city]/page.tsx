@@ -26,6 +26,10 @@ function isPublished(service: string, city: string) {
   );
 }
 
+function pageTitle(servicePlural: string, locationName: string) {
+  return `${servicePlural} ${locationName} | Compare Local Quotes`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -38,7 +42,7 @@ export async function generateMetadata({
   if (!content) notFound();
 
   const path = localServicePagePath(content.serviceSlug, content.locationSlug);
-  const title = `${content.servicePlural} ${content.locationName} | Compare Local Removal Quotes`;
+  const title = pageTitle(content.servicePlural, content.locationName);
   const description = `Find ${content.servicePlural.toLowerCase()} in ${content.locationName}. Post your job once, compare up to 3 interested local responses and verified reviews before choosing who to hire.`;
   const socialDescription = `Need ${content.servicePlural.toLowerCase()} in ${content.locationName}? Post the job once, hear from interested local professionals and compare verified reviews and quotes before you hire.`;
 
@@ -63,7 +67,7 @@ export default async function LocalServiceCityPage({
   if (!content) notFound();
 
   const canonicalPath = localServicePagePath(content.serviceSlug, content.locationSlug);
-  const title = `${content.servicePlural} ${content.locationName} | Compare Local Removal Quotes`;
+  const title = pageTitle(content.servicePlural, content.locationName);
   const description = `Find ${content.servicePlural.toLowerCase()} in ${content.locationName}. Post your job once, compare interested local professionals, verified reviews and quotes before choosing who to hire.`;
 
   const breadcrumbItems: BreadcrumbItem[] = [
