@@ -1,23 +1,5 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import {
-  LOCAL_LOCATIONS,
-  LOCAL_TRADES,
-  PUBLISHED_LOCAL_PAGES,
-  localPagePath,
-  type LocalCityKey,
-} from "../lib/localPages";
-
 export function SiteFooter() {
-  const pathname = usePathname();
   const year = new Date().getFullYear();
-  const segments = pathname.split("/").filter(Boolean);
-  const cityKey = segments[1] as LocalCityKey | undefined;
-  const city = cityKey ? LOCAL_LOCATIONS[cityKey] : undefined;
-  const cityPages = cityKey && city
-    ? PUBLISHED_LOCAL_PAGES.filter((page) => page.city === cityKey)
-    : [];
 
   return (
     <footer>
@@ -29,32 +11,15 @@ export function SiteFooter() {
           <p>Helping UK homeowners describe a job once and compare local trade options.</p>
         </div>
 
-        <div className="footer-links" aria-label={city ? `${city.name} trades` : "Find a trade"}>
-          <strong>{city ? `${city.name} trades` : "Find a trade"}</strong>
-          {city && cityKey ? (
-            cityPages.map((page) => (
-              <a href={localPagePath(page.trade, page.city)} key={`${page.trade}-${page.city}`}>
-                {LOCAL_TRADES[page.trade].footerLabel}
-              </a>
-            ))
-          ) : (
-            <>
-              <a href="/handyman/">Handymen</a>
-              <a href="/plumber/">Plumbers</a>
-              <a href="/electrician/">Electricians</a>
-              <a href="/roofer/">Roofers</a>
-              <a href="/painter-decorator/">Painters &amp; Decorators</a>
-              <a href="/flooring-fitter/">Flooring Fitters</a>
-              <a href="/builder/">Builders</a>
-              <a href="/gardener/">Gardeners</a>
-            </>
-          )}
-        </div>
-
         <div className="footer-links" aria-label="Information">
           <strong>Information</strong>
+          <a href="/">Home</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
+        </div>
+
+        <div className="footer-links" aria-label="Legal">
+          <strong>Legal</strong>
           <a href="/privacy/">Privacy</a>
           <a href="/cookies/">Cookies</a>
           <a href="/terms/">Terms</a>
