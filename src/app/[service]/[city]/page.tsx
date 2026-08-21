@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LocalServiceLandingPage } from "../../../components/LocalServiceLandingPage";
-import { getLocalServiceContent } from "../../../lib/localServiceContent";
+import { getLocalServiceContent } from "../../../lib/localServiceLookup";
 import {
   PUBLISHED_LOCAL_SERVICE_PAGES,
   localServicePagePath,
