@@ -152,7 +152,7 @@ const removalCompaniesBirmingham: LocalServicePageContent = {
     eyebrow: "Birmingham move planning",
     title: "Two Birmingham details worth planning before moving day",
     intro:
-      "This is the part of the page that changes with the location. Birmingham has a mixed housing stock and city-specific parking rules that can directly affect how a removal is planned.",
+      "Birmingham's mix of houses, terraces and flats — together with street-by-street parking restrictions — can change how close a removal crew can get to the property and how long loading takes. These are two local details worth checking before the move.",
     items: [
       {
         title: "Birmingham has a very mixed housing stock",
