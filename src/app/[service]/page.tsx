@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceCategoryLandingPage } from "../../components/ServiceCategoryLandingPage";
 import { getServiceCategory } from "../../lib/serviceCategoryContent";
+import { getLocalServiceContent } from "../../lib/localServiceContent";
 import { SERVICE_PAGE_DETAILS } from "../../lib/servicePageContent";
-import { PUBLISHED_SERVICE_PAGES, servicePagePath } from "../../lib/servicePages";
+import {
+  PUBLISHED_LOCAL_SERVICE_PAGES,
+  PUBLISHED_SERVICE_PAGES,
+  localServicePagePath,
+  servicePagePath,
+} from "../../lib/servicePages";
 import { createPageMetadata } from "../../lib/seo";
 import { createServiceCategoryPageStructuredData, type BreadcrumbItem } from "../../lib/schema";
 import type { ServiceSlug } from "../../lib/serviceIframe";
@@ -54,6 +60,20 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
     { name: "Home", href: "/" },
     { name: service.plural, href: canonicalPath },
   ];
+
+  const locationLinks = PUBLISHED_LOCAL_SERVICE_PAGES
+    .filter((page) => page.service === slug)
+    .map((page) => {
+      const localContent = getLocalServiceContent(page.service, page.city);
+      if (!localContent) return null;
+
+      return {
+        name: `${localContent.servicePlural} ${localContent.locationName}`,
+        href: localServicePagePath(page.service, page.city),
+      };
+    })
+    .filter((link): link is { name: string; href: string } => Boolean(link));
+
   const structuredData = createServiceCategoryPageStructuredData({
     canonicalPath,
     title,
@@ -69,6 +89,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
       details={details}
       breadcrumbItems={breadcrumbItems}
       structuredData={structuredData}
+      locationLinks={locationLinks}
     />
   );
 }
