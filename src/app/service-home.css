@@ -5,6 +5,11 @@ main#top h2{
   margin-right:auto !important;
 }
 
+main#top .smallcap{
+  display:block;
+  text-align:center;
+}
+
 .hero h1{
   text-align:center;
   margin-left:auto;
@@ -23,6 +28,10 @@ main#top h2{
   text-align:center;
   margin-left:auto;
   margin-right:auto;
+}
+
+.how .intro{
+  margin-bottom:44px;
 }
 
 .service-heading-card{
@@ -95,6 +104,10 @@ main#top h2{
     text-align:center;
     margin-left:auto;
     margin-right:auto;
+  }
+
+  .how .intro{
+    margin-bottom:42px;
   }
 
   .service-heading-card{
