@@ -1,3 +1,10 @@
+main#top h1,
+main#top h2{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
 .hero h1{
   text-align:center;
   margin-left:auto;
