@@ -10,6 +10,7 @@ import { SITE_URL } from "../lib/site";
 const STATIC_PATHS = [
   "/",
   "/about/",
+  "/transparency/",
   "/contact/",
   "/privacy/",
   "/cookies/",
