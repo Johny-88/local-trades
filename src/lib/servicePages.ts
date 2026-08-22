@@ -199,6 +199,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "sheffield" },
   { service: "driveway-specialists", city: "sheffield" },
   { service: "window-specialists", city: "sheffield" },
+  { service: "removal-companies", city: "liverpool" },
+  { service: "cleaners", city: "liverpool" },
+  { service: "tilers", city: "liverpool" },
+  { service: "heating-engineers", city: "liverpool" },
+  { service: "locksmiths", city: "liverpool" },
+  { service: "pest-controllers", city: "liverpool" },
+  { service: "tree-surgeons", city: "liverpool" },
+  { service: "architects", city: "liverpool" },
+  { service: "plasterers", city: "liverpool" },
+  { service: "kitchen-fitters", city: "liverpool" },
+  { service: "bathroom-specialists", city: "liverpool" },
+  { service: "drainage-specialists", city: "liverpool" },
+  { service: "driveway-specialists", city: "liverpool" },
+  { service: "window-specialists", city: "liverpool" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
