@@ -227,6 +227,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "glasgow" },
   { service: "driveway-specialists", city: "glasgow" },
   { service: "window-specialists", city: "glasgow" },
+  { service: "removal-companies", city: "edinburgh" },
+  { service: "cleaners", city: "edinburgh" },
+  { service: "tilers", city: "edinburgh" },
+  { service: "heating-engineers", city: "edinburgh" },
+  { service: "locksmiths", city: "edinburgh" },
+  { service: "pest-controllers", city: "edinburgh" },
+  { service: "tree-surgeons", city: "edinburgh" },
+  { service: "architects", city: "edinburgh" },
+  { service: "plasterers", city: "edinburgh" },
+  { service: "kitchen-fitters", city: "edinburgh" },
+  { service: "bathroom-specialists", city: "edinburgh" },
+  { service: "drainage-specialists", city: "edinburgh" },
+  { service: "driveway-specialists", city: "edinburgh" },
+  { service: "window-specialists", city: "edinburgh" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
