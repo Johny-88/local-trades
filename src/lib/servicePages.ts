@@ -241,6 +241,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "edinburgh" },
   { service: "driveway-specialists", city: "edinburgh" },
   { service: "window-specialists", city: "edinburgh" },
+  { service: "removal-companies", city: "nottingham" },
+  { service: "cleaners", city: "nottingham" },
+  { service: "tilers", city: "nottingham" },
+  { service: "heating-engineers", city: "nottingham" },
+  { service: "locksmiths", city: "nottingham" },
+  { service: "pest-controllers", city: "nottingham" },
+  { service: "tree-surgeons", city: "nottingham" },
+  { service: "architects", city: "nottingham" },
+  { service: "plasterers", city: "nottingham" },
+  { service: "kitchen-fitters", city: "nottingham" },
+  { service: "bathroom-specialists", city: "nottingham" },
+  { service: "drainage-specialists", city: "nottingham" },
+  { service: "driveway-specialists", city: "nottingham" },
+  { service: "window-specialists", city: "nottingham" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
