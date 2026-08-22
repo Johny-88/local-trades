@@ -577,6 +577,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "rochdale" },
   { service: "driveway-specialists", city: "rochdale" },
   { service: "window-specialists", city: "rochdale" },
+  { service: "removal-companies", city: "west-bromwich" },
+  { service: "cleaners", city: "west-bromwich" },
+  { service: "tilers", city: "west-bromwich" },
+  { service: "heating-engineers", city: "west-bromwich" },
+  { service: "locksmiths", city: "west-bromwich" },
+  { service: "pest-controllers", city: "west-bromwich" },
+  { service: "tree-surgeons", city: "west-bromwich" },
+  { service: "architects", city: "west-bromwich" },
+  { service: "plasterers", city: "west-bromwich" },
+  { service: "kitchen-fitters", city: "west-bromwich" },
+  { service: "bathroom-specialists", city: "west-bromwich" },
+  { service: "drainage-specialists", city: "west-bromwich" },
+  { service: "driveway-specialists", city: "west-bromwich" },
+  { service: "window-specialists", city: "west-bromwich" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
