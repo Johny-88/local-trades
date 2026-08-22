@@ -479,6 +479,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "sutton" },
   { service: "driveway-specialists", city: "sutton" },
   { service: "window-specialists", city: "sutton" },
+  { service: "removal-companies", city: "enfield" },
+  { service: "cleaners", city: "enfield" },
+  { service: "tilers", city: "enfield" },
+  { service: "heating-engineers", city: "enfield" },
+  { service: "locksmiths", city: "enfield" },
+  { service: "pest-controllers", city: "enfield" },
+  { service: "tree-surgeons", city: "enfield" },
+  { service: "architects", city: "enfield" },
+  { service: "plasterers", city: "enfield" },
+  { service: "kitchen-fitters", city: "enfield" },
+  { service: "bathroom-specialists", city: "enfield" },
+  { service: "drainage-specialists", city: "enfield" },
+  { service: "driveway-specialists", city: "enfield" },
+  { service: "window-specialists", city: "enfield" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
