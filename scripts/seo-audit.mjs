@@ -174,7 +174,7 @@ assert(sameSet(services, ogEntries.map((entry) => entry.service)), "SERVICE_OG_I
 for (const { service, image } of ogEntries) {
   assert(image === `/og/${service}.png`, `OG path for ${service} should be /og/${service}.png, found ${image}`);
 }
-assert(exists("public/og/home.jpg"), "default homepage OG image public/og/home.jpg is missing");
+assert(exists("public/og/home.png"), "default homepage OG image public/og/home.png is missing");
 assert(exists("src/app/og/[...slug]/route.tsx"), "dynamic category OG route is missing");
 const ogRouteSource = read("src/app/og/[...slug]/route.tsx");
 assert(ogRouteSource.includes("getServiceCategory(serviceSlug)"), "OG route is not validating category slugs");
