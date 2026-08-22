@@ -409,6 +409,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "walsall" },
   { service: "driveway-specialists", city: "walsall" },
   { service: "window-specialists", city: "walsall" },
+  { service: "removal-companies", city: "romford" },
+  { service: "cleaners", city: "romford" },
+  { service: "tilers", city: "romford" },
+  { service: "heating-engineers", city: "romford" },
+  { service: "locksmiths", city: "romford" },
+  { service: "pest-controllers", city: "romford" },
+  { service: "tree-surgeons", city: "romford" },
+  { service: "architects", city: "romford" },
+  { service: "plasterers", city: "romford" },
+  { service: "kitchen-fitters", city: "romford" },
+  { service: "bathroom-specialists", city: "romford" },
+  { service: "drainage-specialists", city: "romford" },
+  { service: "driveway-specialists", city: "romford" },
+  { service: "window-specialists", city: "romford" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
