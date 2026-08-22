@@ -367,6 +367,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "bromley" },
   { service: "driveway-specialists", city: "bromley" },
   { service: "window-specialists", city: "bromley" },
+  { service: "removal-companies", city: "stockport" },
+  { service: "cleaners", city: "stockport" },
+  { service: "tilers", city: "stockport" },
+  { service: "heating-engineers", city: "stockport" },
+  { service: "locksmiths", city: "stockport" },
+  { service: "pest-controllers", city: "stockport" },
+  { service: "tree-surgeons", city: "stockport" },
+  { service: "architects", city: "stockport" },
+  { service: "plasterers", city: "stockport" },
+  { service: "kitchen-fitters", city: "stockport" },
+  { service: "bathroom-specialists", city: "stockport" },
+  { service: "drainage-specialists", city: "stockport" },
+  { service: "driveway-specialists", city: "stockport" },
+  { service: "window-specialists", city: "stockport" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
