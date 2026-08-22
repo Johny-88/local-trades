@@ -157,6 +157,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "portsmouth" },
   { service: "driveway-specialists", city: "portsmouth" },
   { service: "window-specialists", city: "portsmouth" },
+  { service: "removal-companies", city: "newcastle-upon-tyne" },
+  { service: "cleaners", city: "newcastle-upon-tyne" },
+  { service: "tilers", city: "newcastle-upon-tyne" },
+  { service: "heating-engineers", city: "newcastle-upon-tyne" },
+  { service: "locksmiths", city: "newcastle-upon-tyne" },
+  { service: "pest-controllers", city: "newcastle-upon-tyne" },
+  { service: "tree-surgeons", city: "newcastle-upon-tyne" },
+  { service: "architects", city: "newcastle-upon-tyne" },
+  { service: "plasterers", city: "newcastle-upon-tyne" },
+  { service: "kitchen-fitters", city: "newcastle-upon-tyne" },
+  { service: "bathroom-specialists", city: "newcastle-upon-tyne" },
+  { service: "drainage-specialists", city: "newcastle-upon-tyne" },
+  { service: "driveway-specialists", city: "newcastle-upon-tyne" },
+  { service: "window-specialists", city: "newcastle-upon-tyne" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
