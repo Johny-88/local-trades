@@ -185,6 +185,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "brighton-hove" },
   { service: "driveway-specialists", city: "brighton-hove" },
   { service: "window-specialists", city: "brighton-hove" },
+  { service: "removal-companies", city: "sheffield" },
+  { service: "cleaners", city: "sheffield" },
+  { service: "tilers", city: "sheffield" },
+  { service: "heating-engineers", city: "sheffield" },
+  { service: "locksmiths", city: "sheffield" },
+  { service: "pest-controllers", city: "sheffield" },
+  { service: "tree-surgeons", city: "sheffield" },
+  { service: "architects", city: "sheffield" },
+  { service: "plasterers", city: "sheffield" },
+  { service: "kitchen-fitters", city: "sheffield" },
+  { service: "bathroom-specialists", city: "sheffield" },
+  { service: "drainage-specialists", city: "sheffield" },
+  { service: "driveway-specialists", city: "sheffield" },
+  { service: "window-specialists", city: "sheffield" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
