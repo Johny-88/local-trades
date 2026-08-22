@@ -11,6 +11,23 @@ type PageMetadataOptions = {
   twitterDescription?: string;
 };
 
+export const SERVICE_OG_IMAGES: Record<ServiceSlug, string> = {
+  "removal-companies": "/og/removal-companies.png",
+  cleaners: "/og/cleaners.png",
+  tilers: "/og/tilers.png",
+  "heating-engineers": "/og/heating-engineers.png",
+  locksmiths: "/og/locksmiths.png",
+  "pest-controllers": "/og/pest-controllers.png",
+  "tree-surgeons": "/og/tree-surgeons.png",
+  architects: "/og/architects.png",
+  plasterers: "/og/plasterers.png",
+  "kitchen-fitters": "/og/kitchen-fitters.png",
+  "bathroom-specialists": "/og/bathroom-specialists.png",
+  "drainage-specialists": "/og/drainage-specialists.png",
+  "driveway-specialists": "/og/driveway-specialists.png",
+  "window-specialists": "/og/window-specialists.png",
+};
+
 const SERVICE_SLUGS = Object.keys(SERVICE_CATEGORY_IDS) as ServiceSlug[];
 
 function serviceSlugFromPath(path: string): ServiceSlug | undefined {
@@ -21,7 +38,7 @@ function serviceSlugFromPath(path: string): ServiceSlug | undefined {
 export function getOgImage(path: string): string {
   const serviceSlug = serviceSlugFromPath(path);
   if (serviceSlug) {
-    return `/og/${serviceSlug}.png`;
+    return SERVICE_OG_IMAGES[serviceSlug];
   }
 
   return DEFAULT_OG_IMAGE;
