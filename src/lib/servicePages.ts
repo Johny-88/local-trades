@@ -283,6 +283,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "wolverhampton" },
   { service: "driveway-specialists", city: "wolverhampton" },
   { service: "window-specialists", city: "wolverhampton" },
+  { service: "removal-companies", city: "plymouth" },
+  { service: "cleaners", city: "plymouth" },
+  { service: "tilers", city: "plymouth" },
+  { service: "heating-engineers", city: "plymouth" },
+  { service: "locksmiths", city: "plymouth" },
+  { service: "pest-controllers", city: "plymouth" },
+  { service: "tree-surgeons", city: "plymouth" },
+  { service: "architects", city: "plymouth" },
+  { service: "plasterers", city: "plymouth" },
+  { service: "kitchen-fitters", city: "plymouth" },
+  { service: "bathroom-specialists", city: "plymouth" },
+  { service: "drainage-specialists", city: "plymouth" },
+  { service: "driveway-specialists", city: "plymouth" },
+  { service: "window-specialists", city: "plymouth" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
