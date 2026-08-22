@@ -297,6 +297,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "plymouth" },
   { service: "driveway-specialists", city: "plymouth" },
   { service: "window-specialists", city: "plymouth" },
+  { service: "removal-companies", city: "cardiff" },
+  { service: "cleaners", city: "cardiff" },
+  { service: "tilers", city: "cardiff" },
+  { service: "heating-engineers", city: "cardiff" },
+  { service: "locksmiths", city: "cardiff" },
+  { service: "pest-controllers", city: "cardiff" },
+  { service: "tree-surgeons", city: "cardiff" },
+  { service: "architects", city: "cardiff" },
+  { service: "plasterers", city: "cardiff" },
+  { service: "kitchen-fitters", city: "cardiff" },
+  { service: "bathroom-specialists", city: "cardiff" },
+  { service: "drainage-specialists", city: "cardiff" },
+  { service: "driveway-specialists", city: "cardiff" },
+  { service: "window-specialists", city: "cardiff" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
