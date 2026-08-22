@@ -451,6 +451,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "st-helens" },
   { service: "driveway-specialists", city: "st-helens" },
   { service: "window-specialists", city: "st-helens" },
+  { service: "removal-companies", city: "dudley" },
+  { service: "cleaners", city: "dudley" },
+  { service: "tilers", city: "dudley" },
+  { service: "heating-engineers", city: "dudley" },
+  { service: "locksmiths", city: "dudley" },
+  { service: "pest-controllers", city: "dudley" },
+  { service: "tree-surgeons", city: "dudley" },
+  { service: "architects", city: "dudley" },
+  { service: "plasterers", city: "dudley" },
+  { service: "kitchen-fitters", city: "dudley" },
+  { service: "bathroom-specialists", city: "dudley" },
+  { service: "drainage-specialists", city: "dudley" },
+  { service: "driveway-specialists", city: "dudley" },
+  { service: "window-specialists", city: "dudley" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
