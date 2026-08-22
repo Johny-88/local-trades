@@ -325,6 +325,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "solihull" },
   { service: "driveway-specialists", city: "solihull" },
   { service: "window-specialists", city: "solihull" },
+  { service: "removal-companies", city: "sutton-coldfield" },
+  { service: "cleaners", city: "sutton-coldfield" },
+  { service: "tilers", city: "sutton-coldfield" },
+  { service: "heating-engineers", city: "sutton-coldfield" },
+  { service: "locksmiths", city: "sutton-coldfield" },
+  { service: "pest-controllers", city: "sutton-coldfield" },
+  { service: "tree-surgeons", city: "sutton-coldfield" },
+  { service: "architects", city: "sutton-coldfield" },
+  { service: "plasterers", city: "sutton-coldfield" },
+  { service: "kitchen-fitters", city: "sutton-coldfield" },
+  { service: "bathroom-specialists", city: "sutton-coldfield" },
+  { service: "drainage-specialists", city: "sutton-coldfield" },
+  { service: "driveway-specialists", city: "sutton-coldfield" },
+  { service: "window-specialists", city: "sutton-coldfield" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
