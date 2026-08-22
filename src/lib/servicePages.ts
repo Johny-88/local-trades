@@ -129,6 +129,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "reading" },
   { service: "driveway-specialists", city: "reading" },
   { service: "window-specialists", city: "reading" },
+  { service: "removal-companies", city: "milton-keynes" },
+  { service: "cleaners", city: "milton-keynes" },
+  { service: "tilers", city: "milton-keynes" },
+  { service: "heating-engineers", city: "milton-keynes" },
+  { service: "locksmiths", city: "milton-keynes" },
+  { service: "pest-controllers", city: "milton-keynes" },
+  { service: "tree-surgeons", city: "milton-keynes" },
+  { service: "architects", city: "milton-keynes" },
+  { service: "plasterers", city: "milton-keynes" },
+  { service: "kitchen-fitters", city: "milton-keynes" },
+  { service: "bathroom-specialists", city: "milton-keynes" },
+  { service: "drainage-specialists", city: "milton-keynes" },
+  { service: "driveway-specialists", city: "milton-keynes" },
+  { service: "window-specialists", city: "milton-keynes" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
