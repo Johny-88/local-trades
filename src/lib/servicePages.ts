@@ -171,6 +171,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "newcastle-upon-tyne" },
   { service: "driveway-specialists", city: "newcastle-upon-tyne" },
   { service: "window-specialists", city: "newcastle-upon-tyne" },
+  { service: "removal-companies", city: "brighton-hove" },
+  { service: "cleaners", city: "brighton-hove" },
+  { service: "tilers", city: "brighton-hove" },
+  { service: "heating-engineers", city: "brighton-hove" },
+  { service: "locksmiths", city: "brighton-hove" },
+  { service: "pest-controllers", city: "brighton-hove" },
+  { service: "tree-surgeons", city: "brighton-hove" },
+  { service: "architects", city: "brighton-hove" },
+  { service: "plasterers", city: "brighton-hove" },
+  { service: "kitchen-fitters", city: "brighton-hove" },
+  { service: "bathroom-specialists", city: "brighton-hove" },
+  { service: "drainage-specialists", city: "brighton-hove" },
+  { service: "driveway-specialists", city: "brighton-hove" },
+  { service: "window-specialists", city: "brighton-hove" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
