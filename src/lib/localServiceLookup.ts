@@ -6,6 +6,7 @@ import { getBromleyServiceContent } from "./bromleyServiceContent";
 import { getCardiffServiceContent } from "./cardiffServiceContent";
 import { getCroydonServiceContent } from "./croydonServiceContent";
 import { getDudleyServiceContent } from "./dudleyServiceContent";
+import { getEnfieldServiceContent } from "./enfieldServiceContent";
 import { getEdinburghServiceContent } from "./edinburghServiceContent";
 import { getGlasgowServiceContent } from "./glasgowServiceContent";
 import { getLocalServiceContent as getPilotLocalServiceContent } from "./localServiceContent";
@@ -66,6 +67,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getSouthportServiceContent(service, city) ??
     getStHelensServiceContent(service, city) ??
     getDudleyServiceContent(service, city) ??
-    getSuttonServiceContent(service, city)
+    getSuttonServiceContent(service, city) ??
+    getEnfieldServiceContent(service, city)
   );
 }
