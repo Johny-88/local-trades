@@ -437,6 +437,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "southport" },
   { service: "driveway-specialists", city: "southport" },
   { service: "window-specialists", city: "southport" },
+  { service: "removal-companies", city: "st-helens" },
+  { service: "cleaners", city: "st-helens" },
+  { service: "tilers", city: "st-helens" },
+  { service: "heating-engineers", city: "st-helens" },
+  { service: "locksmiths", city: "st-helens" },
+  { service: "pest-controllers", city: "st-helens" },
+  { service: "tree-surgeons", city: "st-helens" },
+  { service: "architects", city: "st-helens" },
+  { service: "plasterers", city: "st-helens" },
+  { service: "kitchen-fitters", city: "st-helens" },
+  { service: "bathroom-specialists", city: "st-helens" },
+  { service: "drainage-specialists", city: "st-helens" },
+  { service: "driveway-specialists", city: "st-helens" },
+  { service: "window-specialists", city: "st-helens" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
