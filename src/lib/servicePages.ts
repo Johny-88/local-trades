@@ -353,6 +353,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "croydon" },
   { service: "driveway-specialists", city: "croydon" },
   { service: "window-specialists", city: "croydon" },
+  { service: "removal-companies", city: "bromley" },
+  { service: "cleaners", city: "bromley" },
+  { service: "tilers", city: "bromley" },
+  { service: "heating-engineers", city: "bromley" },
+  { service: "locksmiths", city: "bromley" },
+  { service: "pest-controllers", city: "bromley" },
+  { service: "tree-surgeons", city: "bromley" },
+  { service: "architects", city: "bromley" },
+  { service: "plasterers", city: "bromley" },
+  { service: "kitchen-fitters", city: "bromley" },
+  { service: "bathroom-specialists", city: "bromley" },
+  { service: "drainage-specialists", city: "bromley" },
+  { service: "driveway-specialists", city: "bromley" },
+  { service: "window-specialists", city: "bromley" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
