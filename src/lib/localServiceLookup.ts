@@ -1,4 +1,5 @@
 import { getBirminghamServiceContent } from "./birminghamServiceContent";
+import { getBoltonServiceContent } from "./boltonServiceContent";
 import { getBrightonHoveServiceContent } from "./brightonHoveServiceContent";
 import { getBristolServiceContent } from "./bristolServiceContent";
 import { getBromleyServiceContent } from "./bromleyServiceContent";
@@ -52,6 +53,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getSuttonColdfieldServiceContent(service, city) ??
     getCroydonServiceContent(service, city) ??
     getBromleyServiceContent(service, city) ??
-    getStockportServiceContent(service, city)
+    getStockportServiceContent(service, city) ??
+    getBoltonServiceContent(service, city)
   );
 }
