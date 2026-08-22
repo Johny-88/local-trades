@@ -563,6 +563,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "oldham" },
   { service: "driveway-specialists", city: "oldham" },
   { service: "window-specialists", city: "oldham" },
+  { service: "removal-companies", city: "rochdale" },
+  { service: "cleaners", city: "rochdale" },
+  { service: "tilers", city: "rochdale" },
+  { service: "heating-engineers", city: "rochdale" },
+  { service: "locksmiths", city: "rochdale" },
+  { service: "pest-controllers", city: "rochdale" },
+  { service: "tree-surgeons", city: "rochdale" },
+  { service: "architects", city: "rochdale" },
+  { service: "plasterers", city: "rochdale" },
+  { service: "kitchen-fitters", city: "rochdale" },
+  { service: "bathroom-specialists", city: "rochdale" },
+  { service: "drainage-specialists", city: "rochdale" },
+  { service: "driveway-specialists", city: "rochdale" },
+  { service: "window-specialists", city: "rochdale" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
