@@ -269,6 +269,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "leicester" },
   { service: "driveway-specialists", city: "leicester" },
   { service: "window-specialists", city: "leicester" },
+  { service: "removal-companies", city: "wolverhampton" },
+  { service: "cleaners", city: "wolverhampton" },
+  { service: "tilers", city: "wolverhampton" },
+  { service: "heating-engineers", city: "wolverhampton" },
+  { service: "locksmiths", city: "wolverhampton" },
+  { service: "pest-controllers", city: "wolverhampton" },
+  { service: "tree-surgeons", city: "wolverhampton" },
+  { service: "architects", city: "wolverhampton" },
+  { service: "plasterers", city: "wolverhampton" },
+  { service: "kitchen-fitters", city: "wolverhampton" },
+  { service: "bathroom-specialists", city: "wolverhampton" },
+  { service: "drainage-specialists", city: "wolverhampton" },
+  { service: "driveway-specialists", city: "wolverhampton" },
+  { service: "window-specialists", city: "wolverhampton" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
