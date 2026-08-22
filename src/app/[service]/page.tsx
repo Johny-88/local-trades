@@ -26,6 +26,14 @@ function isPublished(service: string): service is ServiceSlug {
   return PUBLISHED_SERVICE_PAGES.includes(service as ServiceSlug);
 }
 
+function pageTitle(servicePlural: string) {
+  return `Find Local ${servicePlural} Near You | Local Trades`;
+}
+
+function pageDescription(servicePlural: string) {
+  return `Find local ${servicePlural.toLowerCase()} near you. Post your job once, compare up to 3 local responses and verified reviews before you hire.`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { service: slug } = await params;
   if (!isPublished(slug)) notFound();
@@ -33,8 +41,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!service) notFound();
 
   const path = servicePagePath(slug);
-  const title = `Find Local ${service.plural} Near You | Local Trades`;
-  const description = `Find local ${service.plural.toLowerCase()} near you. Post your job once, compare up to 3 interested local responses and verified reviews before choosing who to hire.`;
+  const title = pageTitle(service.plural);
+  const description = pageDescription(service.plural);
   const socialDescription = `Need ${service.plural.toLowerCase()}? Post the job once, hear from interested local professionals and compare verified reviews and quotes before you hire.`;
 
   return createPageMetadata({
@@ -54,8 +62,8 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
   const details = SERVICE_PAGE_DETAILS[slug];
   const canonicalPath = servicePagePath(slug);
-  const title = `Find Local ${service.plural} Near You | Local Trades`;
-  const description = `Find local ${service.plural.toLowerCase()} near you. Post your job once, compare interested local professionals, verified reviews and quotes before choosing who to hire.`;
+  const title = pageTitle(service.plural);
+  const description = pageDescription(service.plural);
   const breadcrumbItems: BreadcrumbItem[] = [
     { name: "Home", href: "/" },
     { name: service.plural, href: canonicalPath },
