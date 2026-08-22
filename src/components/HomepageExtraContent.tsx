@@ -1,3 +1,6 @@
+import { serviceCategories } from "../lib/serviceCategoryContent";
+import { servicePagePath } from "../lib/servicePages";
+
 export function HomepageExtraContent() {
   return (
     <aside>
@@ -32,6 +35,26 @@ export function HomepageExtraContent() {
             <div className="hire-row"><i>4</i><div><b>Agree timing and payment</b><span>Confirm the likely start date, expected duration, deposits and when the final payment becomes due.</span></div></div>
             <div className="hire-row"><i>5</i><div><b>Keep the important details in writing</b><span>Save the agreed scope, price and any later changes so both sides have the same record.</span></div></div>
           </div>
+        </div>
+      </section>
+
+      <section className="homepage-directory" aria-labelledby="service-guides-title" style={{ padding: "52px 0" }}>
+        <div className="wrap">
+          <div className="directory-head" style={{ marginBottom: 22 }}>
+            <span className="smallcap">Service guides</span>
+            <h2 id="service-guides-title" style={{ fontSize: "clamp(30px, 4vw, 38px)", marginTop: 8 }}>
+              Browse by service
+            </h2>
+            <p>Explore our service pages for practical guidance and local quote options.</p>
+          </div>
+          <nav className="directory-grid" aria-label="Local Trades service guides">
+            {serviceCategories.map((service) => (
+              <a className="directory-card" href={servicePagePath(service.slug)} key={service.slug}>
+                <span>{service.plural}</span>
+                <i aria-hidden="true">→</i>
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
     </aside>
