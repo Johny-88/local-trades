@@ -423,6 +423,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "romford" },
   { service: "driveway-specialists", city: "romford" },
   { service: "window-specialists", city: "romford" },
+  { service: "removal-companies", city: "southport" },
+  { service: "cleaners", city: "southport" },
+  { service: "tilers", city: "southport" },
+  { service: "heating-engineers", city: "southport" },
+  { service: "locksmiths", city: "southport" },
+  { service: "pest-controllers", city: "southport" },
+  { service: "tree-surgeons", city: "southport" },
+  { service: "architects", city: "southport" },
+  { service: "plasterers", city: "southport" },
+  { service: "kitchen-fitters", city: "southport" },
+  { service: "bathroom-specialists", city: "southport" },
+  { service: "drainage-specialists", city: "southport" },
+  { service: "driveway-specialists", city: "southport" },
+  { service: "window-specialists", city: "southport" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
