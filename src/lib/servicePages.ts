@@ -115,6 +115,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "southampton" },
   { service: "driveway-specialists", city: "southampton" },
   { service: "window-specialists", city: "southampton" },
+  { service: "removal-companies", city: "reading" },
+  { service: "cleaners", city: "reading" },
+  { service: "tilers", city: "reading" },
+  { service: "heating-engineers", city: "reading" },
+  { service: "locksmiths", city: "reading" },
+  { service: "pest-controllers", city: "reading" },
+  { service: "tree-surgeons", city: "reading" },
+  { service: "architects", city: "reading" },
+  { service: "plasterers", city: "reading" },
+  { service: "kitchen-fitters", city: "reading" },
+  { service: "bathroom-specialists", city: "reading" },
+  { service: "drainage-specialists", city: "reading" },
+  { service: "driveway-specialists", city: "reading" },
+  { service: "window-specialists", city: "reading" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
