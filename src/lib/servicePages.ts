@@ -143,6 +143,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "milton-keynes" },
   { service: "driveway-specialists", city: "milton-keynes" },
   { service: "window-specialists", city: "milton-keynes" },
+  { service: "removal-companies", city: "portsmouth" },
+  { service: "cleaners", city: "portsmouth" },
+  { service: "tilers", city: "portsmouth" },
+  { service: "heating-engineers", city: "portsmouth" },
+  { service: "locksmiths", city: "portsmouth" },
+  { service: "pest-controllers", city: "portsmouth" },
+  { service: "tree-surgeons", city: "portsmouth" },
+  { service: "architects", city: "portsmouth" },
+  { service: "plasterers", city: "portsmouth" },
+  { service: "kitchen-fitters", city: "portsmouth" },
+  { service: "bathroom-specialists", city: "portsmouth" },
+  { service: "drainage-specialists", city: "portsmouth" },
+  { service: "driveway-specialists", city: "portsmouth" },
+  { service: "window-specialists", city: "portsmouth" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
