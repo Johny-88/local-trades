@@ -37,6 +37,7 @@ import { getStockportServiceContent } from "./stockportServiceContent";
 import { getSuttonServiceContent } from "./suttonServiceContent";
 import { getSuttonColdfieldServiceContent } from "./suttonColdfieldServiceContent";
 import { getWalsallServiceContent } from "./walsallServiceContent";
+import { getWestBromwichServiceContent } from "./westBromwichServiceContent";
 import { getWolverhamptonServiceContent } from "./wolverhamptonServiceContent";
 
 export function getLocalServiceContent(service: string, city: string) {
@@ -80,6 +81,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getBootleServiceContent(service, city) ??
     getBuryServiceContent(service, city) ??
     getOldhamServiceContent(service, city) ??
-    getRochdaleServiceContent(service, city)
+    getRochdaleServiceContent(service, city) ??
+    getWestBromwichServiceContent(service, city)
   );
 }
