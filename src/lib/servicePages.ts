@@ -381,6 +381,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "stockport" },
   { service: "driveway-specialists", city: "stockport" },
   { service: "window-specialists", city: "stockport" },
+  { service: "removal-companies", city: "bolton" },
+  { service: "cleaners", city: "bolton" },
+  { service: "tilers", city: "bolton" },
+  { service: "heating-engineers", city: "bolton" },
+  { service: "locksmiths", city: "bolton" },
+  { service: "pest-controllers", city: "bolton" },
+  { service: "tree-surgeons", city: "bolton" },
+  { service: "architects", city: "bolton" },
+  { service: "plasterers", city: "bolton" },
+  { service: "kitchen-fitters", city: "bolton" },
+  { service: "bathroom-specialists", city: "bolton" },
+  { service: "drainage-specialists", city: "bolton" },
+  { service: "driveway-specialists", city: "bolton" },
+  { service: "window-specialists", city: "bolton" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
