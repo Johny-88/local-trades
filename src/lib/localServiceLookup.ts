@@ -24,6 +24,7 @@ import { getSheffieldServiceContent } from "./sheffieldServiceContent";
 import { getSolihullServiceContent } from "./solihullServiceContent";
 import { getSouthamptonServiceContent } from "./southamptonServiceContent";
 import { getSouthportServiceContent } from "./southportServiceContent";
+import { getStHelensServiceContent } from "./stHelensServiceContent";
 import { getStockportServiceContent } from "./stockportServiceContent";
 import { getSuttonColdfieldServiceContent } from "./suttonColdfieldServiceContent";
 import { getWalsallServiceContent } from "./walsallServiceContent";
@@ -60,6 +61,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getBoltonServiceContent(service, city) ??
     getWalsallServiceContent(service, city) ??
     getRomfordServiceContent(service, city) ??
-    getSouthportServiceContent(service, city)
+    getSouthportServiceContent(service, city) ??
+    getStHelensServiceContent(service, city)
   );
 }
