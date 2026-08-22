@@ -255,6 +255,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "nottingham" },
   { service: "driveway-specialists", city: "nottingham" },
   { service: "window-specialists", city: "nottingham" },
+  { service: "removal-companies", city: "leicester" },
+  { service: "cleaners", city: "leicester" },
+  { service: "tilers", city: "leicester" },
+  { service: "heating-engineers", city: "leicester" },
+  { service: "locksmiths", city: "leicester" },
+  { service: "pest-controllers", city: "leicester" },
+  { service: "tree-surgeons", city: "leicester" },
+  { service: "architects", city: "leicester" },
+  { service: "plasterers", city: "leicester" },
+  { service: "kitchen-fitters", city: "leicester" },
+  { service: "bathroom-specialists", city: "leicester" },
+  { service: "drainage-specialists", city: "leicester" },
+  { service: "driveway-specialists", city: "leicester" },
+  { service: "window-specialists", city: "leicester" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
