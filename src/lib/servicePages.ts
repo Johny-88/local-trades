@@ -339,6 +339,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "sutton-coldfield" },
   { service: "driveway-specialists", city: "sutton-coldfield" },
   { service: "window-specialists", city: "sutton-coldfield" },
+  { service: "removal-companies", city: "croydon" },
+  { service: "cleaners", city: "croydon" },
+  { service: "tilers", city: "croydon" },
+  { service: "heating-engineers", city: "croydon" },
+  { service: "locksmiths", city: "croydon" },
+  { service: "pest-controllers", city: "croydon" },
+  { service: "tree-surgeons", city: "croydon" },
+  { service: "architects", city: "croydon" },
+  { service: "plasterers", city: "croydon" },
+  { service: "kitchen-fitters", city: "croydon" },
+  { service: "bathroom-specialists", city: "croydon" },
+  { service: "drainage-specialists", city: "croydon" },
+  { service: "driveway-specialists", city: "croydon" },
+  { service: "window-specialists", city: "croydon" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
