@@ -22,6 +22,7 @@ import { getManchesterServiceContent } from "./manchesterServiceContent";
 import { getMiltonKeynesServiceContent } from "./miltonKeynesServiceContent";
 import { getNewcastleUponTyneServiceContent } from "./newcastleUponTyneServiceContent";
 import { getNottinghamServiceContent } from "./nottinghamServiceContent";
+import { getOldhamServiceContent } from "./oldhamServiceContent";
 import { getPlymouthServiceContent } from "./plymouthServiceContent";
 import { getPortsmouthServiceContent } from "./portsmouthServiceContent";
 import { getReadingServiceContent } from "./readingServiceContent";
@@ -76,6 +77,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getBirkenheadServiceContent(service, city) ??
     getCrosbyServiceContent(service, city) ??
     getBootleServiceContent(service, city) ??
-    getBuryServiceContent(service, city)
+    getBuryServiceContent(service, city) ??
+    getOldhamServiceContent(service, city)
   );
 }
