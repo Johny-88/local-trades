@@ -493,6 +493,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "enfield" },
   { service: "driveway-specialists", city: "enfield" },
   { service: "window-specialists", city: "enfield" },
+  { service: "removal-companies", city: "birkenhead" },
+  { service: "cleaners", city: "birkenhead" },
+  { service: "tilers", city: "birkenhead" },
+  { service: "heating-engineers", city: "birkenhead" },
+  { service: "locksmiths", city: "birkenhead" },
+  { service: "pest-controllers", city: "birkenhead" },
+  { service: "tree-surgeons", city: "birkenhead" },
+  { service: "architects", city: "birkenhead" },
+  { service: "plasterers", city: "birkenhead" },
+  { service: "kitchen-fitters", city: "birkenhead" },
+  { service: "bathroom-specialists", city: "birkenhead" },
+  { service: "drainage-specialists", city: "birkenhead" },
+  { service: "driveway-specialists", city: "birkenhead" },
+  { service: "window-specialists", city: "birkenhead" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
