@@ -549,6 +549,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "bury" },
   { service: "driveway-specialists", city: "bury" },
   { service: "window-specialists", city: "bury" },
+  { service: "removal-companies", city: "oldham" },
+  { service: "cleaners", city: "oldham" },
+  { service: "tilers", city: "oldham" },
+  { service: "heating-engineers", city: "oldham" },
+  { service: "locksmiths", city: "oldham" },
+  { service: "pest-controllers", city: "oldham" },
+  { service: "tree-surgeons", city: "oldham" },
+  { service: "architects", city: "oldham" },
+  { service: "plasterers", city: "oldham" },
+  { service: "kitchen-fitters", city: "oldham" },
+  { service: "bathroom-specialists", city: "oldham" },
+  { service: "drainage-specialists", city: "oldham" },
+  { service: "driveway-specialists", city: "oldham" },
+  { service: "window-specialists", city: "oldham" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
