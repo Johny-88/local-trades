@@ -465,6 +465,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "dudley" },
   { service: "driveway-specialists", city: "dudley" },
   { service: "window-specialists", city: "dudley" },
+  { service: "removal-companies", city: "sutton" },
+  { service: "cleaners", city: "sutton" },
+  { service: "tilers", city: "sutton" },
+  { service: "heating-engineers", city: "sutton" },
+  { service: "locksmiths", city: "sutton" },
+  { service: "pest-controllers", city: "sutton" },
+  { service: "tree-surgeons", city: "sutton" },
+  { service: "architects", city: "sutton" },
+  { service: "plasterers", city: "sutton" },
+  { service: "kitchen-fitters", city: "sutton" },
+  { service: "bathroom-specialists", city: "sutton" },
+  { service: "drainage-specialists", city: "sutton" },
+  { service: "driveway-specialists", city: "sutton" },
+  { service: "window-specialists", city: "sutton" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
