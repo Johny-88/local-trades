@@ -31,6 +31,10 @@ function pageTitle(servicePlural: string, locationName: string) {
   return `${servicePlural} ${locationName} | Compare Local Quotes`;
 }
 
+function pageDescription(servicePlural: string, locationName: string) {
+  return `Find ${servicePlural.toLowerCase()} in ${locationName}. Post your job once, compare up to 3 local responses and verified reviews before you hire.`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -44,7 +48,7 @@ export async function generateMetadata({
 
   const path = localServicePagePath(content.serviceSlug, content.locationSlug);
   const title = pageTitle(content.servicePlural, content.locationName);
-  const description = `Find ${content.servicePlural.toLowerCase()} in ${content.locationName}. Post your job once, compare up to 3 interested local responses and verified reviews before choosing who to hire.`;
+  const description = pageDescription(content.servicePlural, content.locationName);
   const socialDescription = `Need ${content.servicePlural.toLowerCase()} in ${content.locationName}? Post the job once, hear from interested local professionals and compare verified reviews and quotes before you hire.`;
 
   return createPageMetadata({
@@ -70,7 +74,7 @@ export default async function LocalServiceCityPage({
   const canonicalPath = localServicePagePath(content.serviceSlug, content.locationSlug);
   const parentServicePath = servicePagePath(content.serviceSlug);
   const title = pageTitle(content.servicePlural, content.locationName);
-  const description = `Find ${content.servicePlural.toLowerCase()} in ${content.locationName}. Post your job once, compare interested local professionals, verified reviews and quotes before choosing who to hire.`;
+  const description = pageDescription(content.servicePlural, content.locationName);
 
   const breadcrumbItems: BreadcrumbItem[] = [
     { name: "Home", href: "/" },
