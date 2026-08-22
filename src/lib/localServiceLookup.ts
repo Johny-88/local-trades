@@ -5,6 +5,7 @@ import { getBootleServiceContent } from "./bootleServiceContent";
 import { getBrightonHoveServiceContent } from "./brightonHoveServiceContent";
 import { getBristolServiceContent } from "./bristolServiceContent";
 import { getBromleyServiceContent } from "./bromleyServiceContent";
+import { getBuryServiceContent } from "./buryServiceContent";
 import { getCardiffServiceContent } from "./cardiffServiceContent";
 import { getCroydonServiceContent } from "./croydonServiceContent";
 import { getCrosbyServiceContent } from "./crosbyServiceContent";
@@ -74,6 +75,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getEnfieldServiceContent(service, city) ??
     getBirkenheadServiceContent(service, city) ??
     getCrosbyServiceContent(service, city) ??
-    getBootleServiceContent(service, city)
+    getBootleServiceContent(service, city) ??
+    getBuryServiceContent(service, city)
   );
 }
