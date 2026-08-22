@@ -395,6 +395,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "bolton" },
   { service: "driveway-specialists", city: "bolton" },
   { service: "window-specialists", city: "bolton" },
+  { service: "removal-companies", city: "walsall" },
+  { service: "cleaners", city: "walsall" },
+  { service: "tilers", city: "walsall" },
+  { service: "heating-engineers", city: "walsall" },
+  { service: "locksmiths", city: "walsall" },
+  { service: "pest-controllers", city: "walsall" },
+  { service: "tree-surgeons", city: "walsall" },
+  { service: "architects", city: "walsall" },
+  { service: "plasterers", city: "walsall" },
+  { service: "kitchen-fitters", city: "walsall" },
+  { service: "bathroom-specialists", city: "walsall" },
+  { service: "drainage-specialists", city: "walsall" },
+  { service: "driveway-specialists", city: "walsall" },
+  { service: "window-specialists", city: "walsall" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
