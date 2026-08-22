@@ -10,6 +10,7 @@ import type { BreadcrumbItem } from "../lib/schema";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
 import { LocalServiceLeadCard } from "./LocalServiceLeadCard";
+import { OtherLocationServiceButton } from "./OtherLocationServiceButton";
 
 type LocalServiceLandingPageProps = {
   content: LocalServicePageContent;
@@ -307,6 +308,7 @@ export function LocalServiceLandingPage({ content, breadcrumbItems, structuredDa
                     </a>
                   );
                 })}
+                <OtherLocationServiceButton locationName={content.locationName} />
               </nav>
             </div>
           </section>
