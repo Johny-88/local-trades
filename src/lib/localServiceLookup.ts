@@ -1,6 +1,7 @@
 import { getBirminghamServiceContent } from "./birminghamServiceContent";
 import { getBrightonHoveServiceContent } from "./brightonHoveServiceContent";
 import { getBristolServiceContent } from "./bristolServiceContent";
+import { getEdinburghServiceContent } from "./edinburghServiceContent";
 import { getGlasgowServiceContent } from "./glasgowServiceContent";
 import { getLocalServiceContent as getPilotLocalServiceContent } from "./localServiceContent";
 import { getLeedsServiceContent } from "./leedsServiceContent";
@@ -30,6 +31,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getBrightonHoveServiceContent(service, city) ??
     getSheffieldServiceContent(service, city) ??
     getLiverpoolServiceContent(service, city) ??
-    getGlasgowServiceContent(service, city)
+    getGlasgowServiceContent(service, city) ??
+    getEdinburghServiceContent(service, city)
   );
 }
