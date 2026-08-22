@@ -311,6 +311,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "cardiff" },
   { service: "driveway-specialists", city: "cardiff" },
   { service: "window-specialists", city: "cardiff" },
+  { service: "removal-companies", city: "solihull" },
+  { service: "cleaners", city: "solihull" },
+  { service: "tilers", city: "solihull" },
+  { service: "heating-engineers", city: "solihull" },
+  { service: "locksmiths", city: "solihull" },
+  { service: "pest-controllers", city: "solihull" },
+  { service: "tree-surgeons", city: "solihull" },
+  { service: "architects", city: "solihull" },
+  { service: "plasterers", city: "solihull" },
+  { service: "kitchen-fitters", city: "solihull" },
+  { service: "bathroom-specialists", city: "solihull" },
+  { service: "drainage-specialists", city: "solihull" },
+  { service: "driveway-specialists", city: "solihull" },
+  { service: "window-specialists", city: "solihull" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
