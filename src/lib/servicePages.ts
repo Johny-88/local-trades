@@ -535,6 +535,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "bootle" },
   { service: "driveway-specialists", city: "bootle" },
   { service: "window-specialists", city: "bootle" },
+  { service: "removal-companies", city: "bury" },
+  { service: "cleaners", city: "bury" },
+  { service: "tilers", city: "bury" },
+  { service: "heating-engineers", city: "bury" },
+  { service: "locksmiths", city: "bury" },
+  { service: "pest-controllers", city: "bury" },
+  { service: "tree-surgeons", city: "bury" },
+  { service: "architects", city: "bury" },
+  { service: "plasterers", city: "bury" },
+  { service: "kitchen-fitters", city: "bury" },
+  { service: "bathroom-specialists", city: "bury" },
+  { service: "drainage-specialists", city: "bury" },
+  { service: "driveway-specialists", city: "bury" },
+  { service: "window-specialists", city: "bury" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
