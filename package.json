@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "prebuild": "node scripts/seo-audit.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
