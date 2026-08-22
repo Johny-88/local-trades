@@ -521,6 +521,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "crosby" },
   { service: "driveway-specialists", city: "crosby" },
   { service: "window-specialists", city: "crosby" },
+  { service: "removal-companies", city: "bootle" },
+  { service: "cleaners", city: "bootle" },
+  { service: "tilers", city: "bootle" },
+  { service: "heating-engineers", city: "bootle" },
+  { service: "locksmiths", city: "bootle" },
+  { service: "pest-controllers", city: "bootle" },
+  { service: "tree-surgeons", city: "bootle" },
+  { service: "architects", city: "bootle" },
+  { service: "plasterers", city: "bootle" },
+  { service: "kitchen-fitters", city: "bootle" },
+  { service: "bathroom-specialists", city: "bootle" },
+  { service: "drainage-specialists", city: "bootle" },
+  { service: "driveway-specialists", city: "bootle" },
+  { service: "window-specialists", city: "bootle" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
