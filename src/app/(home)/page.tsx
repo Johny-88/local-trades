@@ -4,9 +4,9 @@ import { JsonLd } from "../../components/JsonLd";
 import { createPageMetadata } from "../../lib/seo";
 import { homePageStructuredData } from "../../lib/schema";
 
-const title = "Find Local Home & Property Specialists | Local Trades";
+const title = "Find Local Tradespeople and Property Maintenance Specialists | Local Trades";
 const description =
-  "Find local home and property specialists across the UK. Choose a service, post your job once, compare verified reviews and up to 3 interested professionals.";
+  "Find local tradespeople and home maintenance specdialists across the UK. Choose a service, post your job once, compare verified reviews and up to 3 interested professionals.";
 const socialDescription =
   "Post your job once, hear from up to 3 interested local professionals, check genuine verified reviews and compare your options before choosing who to hire.";
 
