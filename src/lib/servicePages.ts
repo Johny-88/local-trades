@@ -213,6 +213,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "liverpool" },
   { service: "driveway-specialists", city: "liverpool" },
   { service: "window-specialists", city: "liverpool" },
+  { service: "removal-companies", city: "glasgow" },
+  { service: "cleaners", city: "glasgow" },
+  { service: "tilers", city: "glasgow" },
+  { service: "heating-engineers", city: "glasgow" },
+  { service: "locksmiths", city: "glasgow" },
+  { service: "pest-controllers", city: "glasgow" },
+  { service: "tree-surgeons", city: "glasgow" },
+  { service: "architects", city: "glasgow" },
+  { service: "plasterers", city: "glasgow" },
+  { service: "kitchen-fitters", city: "glasgow" },
+  { service: "bathroom-specialists", city: "glasgow" },
+  { service: "drainage-specialists", city: "glasgow" },
+  { service: "driveway-specialists", city: "glasgow" },
+  { service: "window-specialists", city: "glasgow" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
