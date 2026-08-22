@@ -507,6 +507,20 @@ export const PUBLISHED_LOCAL_SERVICE_PAGES: readonly PublishedLocalServicePage[]
   { service: "drainage-specialists", city: "birkenhead" },
   { service: "driveway-specialists", city: "birkenhead" },
   { service: "window-specialists", city: "birkenhead" },
+  { service: "removal-companies", city: "crosby" },
+  { service: "cleaners", city: "crosby" },
+  { service: "tilers", city: "crosby" },
+  { service: "heating-engineers", city: "crosby" },
+  { service: "locksmiths", city: "crosby" },
+  { service: "pest-controllers", city: "crosby" },
+  { service: "tree-surgeons", city: "crosby" },
+  { service: "architects", city: "crosby" },
+  { service: "plasterers", city: "crosby" },
+  { service: "kitchen-fitters", city: "crosby" },
+  { service: "bathroom-specialists", city: "crosby" },
+  { service: "drainage-specialists", city: "crosby" },
+  { service: "driveway-specialists", city: "crosby" },
+  { service: "window-specialists", city: "crosby" },
 ];
 
 export function servicePagePath(service: ServiceSlug) {
