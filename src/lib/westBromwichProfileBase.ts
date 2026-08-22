@@ -1,6 +1,6 @@
 import type { LocalServicePageContent } from "./localServiceContent";
 import { deriveLocationProfile } from "./locationProfileFactory";
-import { getBirminghamServiceContent } from "./birminghamServiceContent";
+import { getManchesterServiceContent } from "./manchesterServiceContent";
 import type { ServiceSlug } from "./serviceIframe";
 
 export const WEST_BROMWICH_AREAS = [
@@ -24,9 +24,9 @@ export type WestBromwichProfileOverride = {
 };
 
 export function makeWestBromwichProfile(service: ServiceSlug, override: WestBromwichProfileOverride) {
-  const base = getBirminghamServiceContent(service, "birmingham");
+  const base = getManchesterServiceContent(service, "manchester");
   if (!base) {
-    throw new Error(`Missing Birmingham base profile for ${service}`);
+    throw new Error(`Missing Manchester base profile for ${service}`);
   }
 
   return deriveLocationProfile(base, {
