@@ -5,6 +5,7 @@ import { getLeedsServiceContent } from "./leedsServiceContent";
 import { getLondonServiceContent } from "./londonServiceContent";
 import { getManchesterServiceContent } from "./manchesterServiceContent";
 import { getMiltonKeynesServiceContent } from "./miltonKeynesServiceContent";
+import { getNewcastleUponTyneServiceContent } from "./newcastleUponTyneServiceContent";
 import { getPortsmouthServiceContent } from "./portsmouthServiceContent";
 import { getReadingServiceContent } from "./readingServiceContent";
 import { getSouthamptonServiceContent } from "./southamptonServiceContent";
@@ -20,6 +21,7 @@ export function getLocalServiceContent(service: string, city: string) {
     getSouthamptonServiceContent(service, city) ??
     getReadingServiceContent(service, city) ??
     getMiltonKeynesServiceContent(service, city) ??
-    getPortsmouthServiceContent(service, city)
+    getPortsmouthServiceContent(service, city) ??
+    getNewcastleUponTyneServiceContent(service, city)
   );
 }
